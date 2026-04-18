@@ -1,15 +1,13 @@
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Projects from "@/components/Projects";
-import CTA from "@/components/CTA";
+import Hero from "@/components/home/Hero";
+import Solutions from "@/components/home/Solutions";
+import Leadership from "@/components/home/Leadership";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
-      <Projects />
-      <CTA />
+      <Solutions />
+      <Leadership />
     </>
   );
 }

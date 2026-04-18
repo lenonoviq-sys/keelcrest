@@ -1,141 +1,73 @@
+import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact — Keel Crest",
+  title: "Contact — Keel Crest Ltd.",
   description:
-    "Begin a conversation with Keel Crest. We partner with a small number of ambitious brands each season.",
+    "Begin a private conversation with Keel Crest Ltd. A select number of new engagements are considered each quarter.",
 };
-
-const channels = [
-  {
-    label: "Email",
-    value: "hello@keelcrest.com",
-    href: "mailto:hello@keelcrest.com",
-    icon: MailIcon,
-  },
-  {
-    label: "Telephone",
-    value: "+1 (415) 555-0112",
-    href: "tel:+14155550112",
-    icon: PhoneIcon,
-  },
-  {
-    label: "Studio",
-    value: "San Francisco · Remote Worldwide",
-    icon: PinIcon,
-  },
-];
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden pt-40 pb-24 bg-black">
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow">Start a conversation</span>
-          <h1 className="section-heading mt-5 text-white">
-            Let&rsquo;s create something{" "}
-            <span className="gold-text italic">enduring</span>.
-          </h1>
-          <div className="divider-gold mx-auto mt-8 w-40" />
-          <p className="mx-auto mt-8 max-w-xl text-white/70 leading-relaxed">
-            We partner with a small number of brands each season. Share the
-            contours of your vision — our studio will be in touch within two
-            business days.
-          </p>
+    <>
+      {/* Intro banner */}
+      <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-night overflow-hidden">
+        <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
+          <div className="max-w-3xl animate-fade-up">
+            <div className="mb-8">
+              <span className="eyebrow">Get in touch</span>
+            </div>
+            <h1 className="section-title text-parchment text-5xl md:text-6xl lg:text-7xl">
+              Begin a{" "}
+              <span className="italic text-gold-gradient">
+                private conversation
+              </span>
+              .
+            </h1>
+            <p className="mt-8 max-w-xl text-base lg:text-lg font-light leading-relaxed text-parchment/65">
+              Keel Crest accepts a limited number of new engagements each
+              quarter. Share the contours of your enquiry — our team will
+              respond with discretion.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="mt-20 grid gap-12 lg:grid-cols-5">
-          <div className="lg:col-span-2 space-y-5">
-            {channels.map(({ label, value, href, icon: Icon }) => {
-              const Wrapper = href ? "a" : "div";
-              return (
-                <Wrapper
-                  key={label}
-                  {...(href ? { href } : {})}
-                  className="luxury-card group flex items-start gap-5 rounded-sm p-6 transition-colors"
+      {/* Main — two column */}
+      <section className="relative pb-32 lg:pb-44 bg-night">
+        <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
+          <div className="grid gap-20 lg:grid-cols-12">
+            {/* Left — contact details + image */}
+            <aside className="lg:col-span-5 space-y-12">
+              <div>
+                <p className="label-luxury mb-5">Email</p>
+                <a
+                  href="mailto:info@keelcrest.com"
+                  className="font-display text-2xl md:text-3xl font-light text-parchment transition-colors hover:text-gold-light"
                 >
-                  <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-sm border border-gold/40 bg-gold/5 text-gold transition-all duration-500 group-hover:border-gold group-hover:shadow-gold">
-                    <Icon />
-                  </span>
-                  <div>
-                    <p className="eyebrow">{label}</p>
-                    <p className="mt-2 font-serif text-xl text-white">
-                      {value}
-                    </p>
-                  </div>
-                </Wrapper>
-              );
-            })}
+                  info@keelcrest.com
+                </a>
+              </div>
 
-            <div className="luxury-card rounded-sm p-6">
-              <p className="eyebrow">Hours</p>
-              <p className="mt-2 font-serif text-xl text-white">
-                Mon – Fri · 9am – 7pm PT
-              </p>
-              <p className="mt-2 text-sm text-white/60">
-                Weekend correspondence by appointment.
-              </p>
+              <div className="relative w-full aspect-[3/2] -ml-2 sm:-ml-6 lg:-ml-32">
+                <Image
+                  src="/keelcrest-logo.png"
+                  alt="Keel Crest Ltd. — brand mark"
+                  fill
+                  quality={95}
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-contain object-left"
+                />
+              </div>
+            </aside>
+
+            {/* Right — form */}
+            <div className="lg:col-span-7">
+              <ContactForm />
             </div>
           </div>
-
-          <div className="lg:col-span-3">
-            <ContactForm />
-          </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="M3 7l9 7 9-7" />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 16.92V21a1 1 0 0 1-1.11 1A19 19 0 0 1 2 4.11 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1.2 4.8a1 1 0 0 1-.29 1L7.21 11.21a16 16 0 0 0 5.58 5.58l1.66-1.79a1 1 0 0 1 1-.29l4.8 1.2a1 1 0 0 1 .75 1Z" />
-    </svg>
-  );
-}
-
-function PinIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 22s-7-6.2-7-12a7 7 0 1 1 14 0c0 5.8-7 12-7 12Z" />
-      <circle cx="12" cy="10" r="2.5" />
-    </svg>
+      </section>
+    </>
   );
 }

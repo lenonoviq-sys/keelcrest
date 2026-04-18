@@ -11,66 +11,95 @@ export default function ContactForm() {
   };
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className="luxury-card relative overflow-hidden rounded-sm p-8 md:p-10"
-    >
-      <div className="pointer-events-none absolute -top-20 -right-20 h-48 w-48 rounded-full bg-gold/15 blur-3xl" />
-      <h2 className="font-serif text-3xl text-white">
-        Tell us about your <span className="gold-text italic">project</span>
-      </h2>
-      <p className="mt-2 text-sm text-white/60">
-        The more context you share, the more considered our first reply.
-      </p>
+    <form onSubmit={onSubmit} className="w-full">
+      <div className="grid gap-10 md:grid-cols-2">
+        <div>
+          <label className="label-luxury" htmlFor="name">
+            Full Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            required
+            placeholder="Your name"
+            className="input-luxury mt-3"
+          />
+        </div>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        <Field label="Full Name" name="name" placeholder="Alexandra Monroe" required />
-        <Field label="Email" name="email" type="email" placeholder="you@brand.com" required />
-        <Field label="Company" name="company" placeholder="Your organization" />
-        <Field label="Budget" name="budget" placeholder="$25k – $100k+" />
+        <div>
+          <label className="label-luxury" htmlFor="email">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@domain.com"
+            className="input-luxury mt-3"
+          />
+        </div>
+
+        <div>
+          <label className="label-luxury" htmlFor="company">
+            Company / Office
+          </label>
+          <input
+            id="company"
+            name="company"
+            placeholder="Your organization"
+            className="input-luxury mt-3"
+          />
+        </div>
+
+        <div>
+          <label className="label-luxury" htmlFor="subject">
+            Subject
+          </label>
+          <input
+            id="subject"
+            name="subject"
+            placeholder="Private inquiry"
+            className="input-luxury mt-3"
+          />
+        </div>
       </div>
 
-      <div className="mt-6">
-        <label className="eyebrow">Project Overview</label>
+      <div className="mt-10">
+        <label className="label-luxury" htmlFor="message">
+          Message
+        </label>
         <textarea
+          id="message"
           name="message"
           rows={5}
           required
-          placeholder="A few lines about your vision, timeline, and ambitions..."
-          className="mt-3 w-full resize-none rounded-sm border border-gold/20 bg-ink/50 px-4 py-3 text-sm text-white placeholder:text-white/30 transition-all focus:border-gold/70 focus:outline-none focus:shadow-gold"
+          placeholder="A few lines about your enquiry..."
+          className="input-luxury mt-3 resize-none"
         />
       </div>
 
-      <button type="submit" className="gold-btn-solid mt-8 w-full sm:w-auto">
-        {submitted ? "Thank you — we'll be in touch" : "Send Inquiry"}
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14M13 5l7 7-7 7" />
-        </svg>
-      </button>
+      <div className="mt-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-parchment/40 tracking-wide max-w-md">
+          Correspondence is received in confidence. A member of our team will
+          be in touch within two business days.
+        </p>
+        <button type="submit" className="btn-luxury">
+          {submitted ? "Message received" : "Send Enquiry"}
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </form>
-  );
-}
-
-function Field({ label, name, type = "text", placeholder, required }) {
-  return (
-    <div>
-      <label className="eyebrow">{label}</label>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        placeholder={placeholder}
-        className="mt-3 w-full rounded-sm border border-gold/20 bg-ink/50 px-4 py-3 text-sm text-white placeholder:text-white/30 transition-all focus:border-gold/70 focus:outline-none focus:shadow-gold"
-      />
-    </div>
   );
 }

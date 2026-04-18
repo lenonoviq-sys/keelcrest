@@ -1,11 +1,10 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 
 export const metadata = {
-  title: "Keel Crest — Crafting Digital Excellence",
+  title: "Keel Crest Ltd. — Wealth Solutions for Private Clients",
   description:
-    "Keel Crest designs and develops premium mobile apps and digital products that drive success.",
+    "Keel Crest Ltd. delivers wealth solutions for family offices, corporate, and private clients. Access new wealth opportunities through the growth potential of digital assets.",
   icons: {
     icon: "/logo.png",
   },
@@ -22,14 +21,12 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-black text-white antialiased">
-        <Navbar />
-        <main className="relative z-10">{children}</main>
-        <Footer />
+      <body className="min-h-screen bg-night text-parchment antialiased">
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

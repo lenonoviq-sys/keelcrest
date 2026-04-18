@@ -7,63 +7,70 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Core surfaces — deep blacks
+        night: {
+          DEFAULT: "#0A0806",
+          900: "#050403",
+          800: "#0A0806",
+          700: "#12100C",
+          600: "#1A1712",
+          500: "#252017",
+        },
+        // Dark bronze — the second mood color
+        bronze: {
+          DEFAULT: "#3D2F1A",
+          900: "#241B0E",
+          800: "#2E2413",
+          700: "#3D2F1A",
+          600: "#524024",
+          500: "#6B5530",
+          400: "#8A6F3F",
+        },
+        // Soft gold — refined, muted, not vibrant
         gold: {
-          DEFAULT: "#D4AF37",
-          light: "#E9C96B",
-          dark: "#9C7A1F",
-          soft: "#F4E4A1",
+          DEFAULT: "#C9A961",
+          light: "#E0C88A",
+          muted: "#A68B47",
+          dark: "#7A6837",
+          soft: "#B89A54",
         },
-        ink: {
-          DEFAULT: "#08070A",
-          800: "#0C0B0F",
-          700: "#121014",
-          600: "#1A171E",
-        },
+        parchment: "#E8DCC4",
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
-        script: ['"Great Vibes"', 'cursive'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+      },
+      letterSpacing: {
+        refined: "0.02em",
+        eyebrow: "0.35em",
       },
       boxShadow: {
-        gold: "0 0 40px -8px rgba(212, 175, 55, 0.35)",
-        "gold-lg": "0 0 80px -12px rgba(212, 175, 55, 0.45)",
-        "inner-gold": "inset 0 0 24px -6px rgba(212, 175, 55, 0.25)",
+        "gold-soft": "0 0 60px -20px rgba(201, 169, 97, 0.35)",
+        "frame": "0 30px 80px -30px rgba(0,0,0,0.8)",
       },
       backgroundImage: {
-        "gold-gradient": "linear-gradient(135deg, #F4E4A1 0%, #D4AF37 45%, #9C7A1F 100%)",
-        "gold-sheen": "linear-gradient(90deg, rgba(212,175,55,0) 0%, rgba(212,175,55,0.6) 50%, rgba(212,175,55,0) 100%)",
-        "radial-gold": "radial-gradient(ellipse at center, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.04) 40%, transparent 70%)",
+        "gold-sheen": "linear-gradient(90deg, transparent 0%, rgba(201,169,97,0.5) 50%, transparent 100%)",
+        "bronze-fade": "linear-gradient(180deg, #0A0806 0%, #1A1712 50%, #0A0806 100%)",
+        "hero-overlay": "linear-gradient(180deg, rgba(10,8,6,0.3) 0%, rgba(10,8,6,0.55) 60%, rgba(10,8,6,0.92) 100%)",
       },
       animation: {
-        "fade-up": "fadeUp 0.9s ease-out both",
-        "fade-in": "fadeIn 1s ease-out both",
-        float: "float 8s ease-in-out infinite",
-        "float-slow": "float 14s ease-in-out infinite",
-        "spin-slow": "spin 30s linear infinite",
-        twinkle: "twinkle 3.5s ease-in-out infinite",
-        shimmer: "shimmer 3s linear infinite",
+        "fade-up": "fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "fade-in": "fadeIn 1.2s ease-out both",
+        "slow-zoom": "slowZoom 20s ease-in-out infinite alternate",
       },
       keyframes: {
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
-        twinkle: {
-          "0%, 100%": { opacity: "0.2", transform: "scale(1)" },
-          "50%": { opacity: "1", transform: "scale(1.25)" },
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
+        slowZoom: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.08)" },
         },
       },
     },
