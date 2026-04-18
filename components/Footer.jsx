@@ -11,7 +11,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center">
               <Image
                 src="/logo.png"
-                alt="Keel Crest Ltd."
+                alt="KeelCrest Holding LTD."
                 width={600}
                 height={400}
                 quality={100}
@@ -65,11 +65,11 @@ export default function Footer() {
         {/* Soft gold divider */}
         <div className="mt-16 h-px w-full bg-gold-sheen opacity-40" />
 
-        <div className="mt-6 flex flex-col items-start justify-between gap-2 text-xs text-parchment/35 md:flex-row md:items-center">
-          <p className="tracking-[0.15em] uppercase">
-            © {new Date().getFullYear()} Keel Crest Ltd. All rights reserved.
+        <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center text-[10px] leading-relaxed text-parchment/35 md:flex-row md:items-center md:gap-2 md:text-left md:text-xs">
+          <p className="tracking-[0.12em] uppercase md:tracking-[0.15em]">
+            © {new Date().getFullYear()} KeelCrest Holding LTD. <span className="block md:inline">All rights reserved.</span>
           </p>
-          <p className="tracking-[0.15em] uppercase">
+          <p className="tracking-[0.12em] uppercase md:tracking-[0.15em]">
             Defined by vision · Driven by excellence
           </p>
         </div>

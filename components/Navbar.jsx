@@ -31,7 +31,7 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "backdrop-blur-xl bg-night/85 border-b border-gold/10"
+          ? "bg-night/95 border-b border-gold/10"
           : "bg-gradient-to-b from-night/60 via-night/20 to-transparent"
       }`}
     >
@@ -40,7 +40,7 @@ export default function Navbar() {
         <Link href="/" className="group flex items-center">
           <Image
             src="/logo.png"
-            alt="Keel Crest Ltd."
+            alt="KeelCrest Holding LTD."
             width={600}
             height={400}
             priority
@@ -66,8 +66,9 @@ export default function Navbar() {
         {/* Mobile trigger */}
         <button
           aria-label="Toggle menu"
+          aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden relative h-10 w-10 text-gold"
+          className="md:hidden relative h-10 w-10 text-gold touch-manipulation [-webkit-tap-highlight-color:transparent]"
         >
           <span
             className={`absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 bg-current transition-all duration-500 ${
@@ -89,11 +90,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-700 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden bg-night/90 backdrop-blur-xl border-t border-gold/10 transition-[opacity,transform] duration-300 ease-out will-change-[opacity,transform] ${
+          open
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >
-        <div className="bg-night/98 backdrop-blur-xl border-t border-gold/10 px-8 py-8">
+        <div className="px-8 py-8">
           <ul className="flex flex-col gap-6">
             {links.map((l) => (
               <li key={l.href}>

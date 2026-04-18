@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute inset-0 animate-slow-zoom">
         <Image
           src="/hero.png"
-          alt="Keel Crest — private horizon"
+          alt="KeelCrest Holding LTD. — private horizon"
           fill
           priority
           quality={90}
@@ -26,7 +26,7 @@ export default function Hero() {
             {/* Left — headline */}
             <div className="animate-fade-up">
               <div className="mb-8">
-                <span className="eyebrow">Welcome to Keel Crest Ltd.</span>
+                <span className="eyebrow">Welcome to KeelCrest Holding LTD.</span>
               </div>
 
               <h1 className="section-title text-parchment text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] leading-[1.08] whitespace-normal">

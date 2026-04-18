@@ -3,38 +3,18 @@ import ImageSlot from "@/components/ImageSlot";
 
 const leaders = [
   {
-    name: "Ahmad Haidar",
+    name: "Ahmad Haydar",
     role: "Founder & CEO",
     bio: "Strategic leadership with a forward-thinking approach.",
     image: "/leader-01.png",
-  },
-  {
-    name: "Aisha Al Wayel",
-    role: "COO",
-    bio: "Driving operational excellence and innovation.",
-    image: "/leader-02.png",
-    scale: 1.2,
-  },
-  {
-    name: "Khaled Abdulaziz Aljasem",
-    role: "Director",
-    bio: "Guiding strategic direction across client engagements.",
-    image: "/leader-03.png",
-    transform: "translateY(-8%) scale(1.18)",
-    origin: "center top",
   },
   {
     name: "Hesham Al Emadi",
     role: "Co-Founder & Director",
     bio: "Building long-term client relationships with disciplined stewardship.",
     image: "/leader-04.png",
-  },
-  {
-    name: "Majid Dalvi",
-    role: "CTO",
-    bio: "Architecting secure, resilient systems for modern wealth.",
-    image: "/leader-05.png",
-    scale: 1.2,
+    scale: 1.12,
+    origin: "center 30%",
   },
 ];
 
@@ -48,7 +28,7 @@ export default function Leadership() {
         <div className="flex flex-col items-center text-center mb-20">
           <Image
             src="/logo.png"
-            alt="Keel Crest Ltd."
+            alt="KeelCrest Holding LTD."
             width={600}
             height={400}
             quality={100}
@@ -64,7 +44,7 @@ export default function Leadership() {
           <h2 className="section-title text-parchment text-4xl md:text-5xl lg:text-6xl">
             The{" "}
             <span className="italic text-gold-gradient">Visionaries</span>{" "}
-            of Keel Crest
+            of KeelCrest Holding LTD.
           </h2>
 
           <p className="mt-6 font-display italic text-xl md:text-2xl text-parchment/65">
@@ -72,8 +52,8 @@ export default function Leadership() {
           </p>
         </div>
 
-        {/* Leadership grid — 5 columns at xl, matched sizing */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        {/* Leadership grid — two leaders, centered */}
+        <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-2">
           {leaders.map((leader, i) => (
             <article key={i} className="leader-card group overflow-hidden">
               {/* Portrait — identical aspect across all cards */}

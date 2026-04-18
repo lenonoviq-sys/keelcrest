@@ -2,16 +2,25 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function IntroAnimation() {
   const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
+    // On refresh: if user landed on a non-home page, swap to home behind the intro overlay. Deferred one frame so hydration/first paint stabilizes before the route change.
+    const path = window.location.pathname;
+    let rafId;
+    if (path !== "/" && path !== "") {
+      rafId = requestAnimationFrame(() => router.replace("/"));
+    }
 
     const fadeTimer = setTimeout(() => setFading(true), 2500);
     const unmountTimer = setTimeout(() => {
@@ -20,11 +29,12 @@ export default function IntroAnimation() {
     }, 3400);
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId);
       clearTimeout(fadeTimer);
       clearTimeout(unmountTimer);
       document.body.style.overflow = originalOverflow;
     };
-  }, []);
+  }, [router]);
 
   if (!visible) return null;
 
@@ -45,7 +55,7 @@ export default function IntroAnimation() {
       <div className="relative animate-intro-logo">
         <Image
           src="/keelcrest-logo.png"
-          alt="Keel Crest Ltd."
+          alt="KeelCrest Holding LTD."
           width={1536}
           height={1024}
           priority
@@ -55,7 +65,7 @@ export default function IntroAnimation() {
       </div>
 
       {/* Tagline below logo — completes the legal name */}
-      <span className="absolute left-1/2 bottom-[22vh] -translate-x-1/2 eyebrow whitespace-nowrap animate-intro-tagline opacity-0">
+      <span className="pointer-events-none absolute left-1/2 bottom-[22vh] -translate-x-1/2 eyebrow whitespace-nowrap animate-intro-tagline">
         Holding Ltd.
       </span>
     </div>

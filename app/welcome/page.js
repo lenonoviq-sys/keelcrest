@@ -25,7 +25,7 @@ export default function WelcomePage() {
           <Link href="/" className="inline-flex items-center mb-16">
             <Image
               src="/logo.png"
-              alt="Keel Crest Ltd."
+              alt="KeelCrest Holding LTD."
               width={600}
               height={400}
               quality={100}
@@ -41,7 +41,7 @@ export default function WelcomePage() {
 
           <h1 className="section-title text-parchment text-4xl md:text-5xl mb-4">
             Welcome to{" "}
-            <span className="italic text-gold-gradient">Keel Crest</span>.
+            <span className="italic text-gold-gradient">KeelCrest Holding LTD.</span>
           </h1>
 
           <p className="text-parchment/55 leading-relaxed mb-12">

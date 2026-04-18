@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 export const metadata = {
-  title: "About — Keel Crest Ltd.",
+  title: "About — KeelCrest Holding LTD.",
   description:
-    "Keel Crest Ltd. is a luxury corporate firm delivering wealth solutions to family offices, corporate, and private clients with discipline and long-term vision.",
+    "KeelCrest Holding LTD. is a luxury corporate firm delivering wealth solutions to family offices, corporate, and private clients with discipline and long-term vision.",
 };
 
 const pillars = [
@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <Image
             src="/about-hero.png"
-            alt="Keel Crest — corporate interior"
+            alt="KeelCrest Holding LTD. — corporate interior"
             fill
             priority
             quality={90}
@@ -43,7 +43,7 @@ export default function AboutPage() {
           <div className="mx-auto w-full max-w-[1400px] px-8 lg:px-14 pb-20 lg:pb-28">
             <div className="max-w-3xl animate-fade-up">
               <div className="mb-8">
-                <span className="eyebrow">Keel Crest Ltd.</span>
+                <span className="eyebrow">KeelCrest Holding LTD.</span>
               </div>
               <h1 className="section-title text-parchment text-5xl md:text-6xl lg:text-7xl">
                 From Vision to{" "}
@@ -87,7 +87,7 @@ export default function AboutPage() {
                   className="group inline-flex items-center gap-3 rounded-md border border-gold/35 bg-black/40 px-5 py-3 transition-all duration-500 hover:border-gold hover:bg-gold/10"
                 >
                   <svg
-                    className="h-8 w-8 text-parchment transition-colors group-hover:text-gold-light"
+                    className="h-9 w-9 text-parchment transition-colors group-hover:text-gold-light"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     aria-hidden="true"
@@ -205,7 +205,7 @@ export default function AboutPage() {
                   className="group inline-flex items-center gap-3 rounded-md border border-gold/35 bg-black/40 px-5 py-3 transition-all duration-500 hover:border-gold hover:bg-gold/10"
                 >
                   <svg
-                    className="h-8 w-8 text-parchment transition-colors group-hover:text-gold-light"
+                    className="h-9 w-9 text-parchment transition-colors group-hover:text-gold-light"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     aria-hidden="true"
@@ -294,7 +294,7 @@ export default function AboutPage() {
                   className="group inline-flex items-center gap-3 rounded-md border border-gold/35 bg-black/40 px-5 py-3 transition-all duration-500 hover:border-gold hover:bg-gold/10"
                 >
                   <svg
-                    className="h-8 w-8 text-parchment transition-colors group-hover:text-gold-light"
+                    className="h-9 w-9 text-parchment transition-colors group-hover:text-gold-light"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     aria-hidden="true"
@@ -358,6 +358,10 @@ export default function AboutPage() {
                 height={1536}
                 quality={100}
                 className="w-full max-w-[440px] lg:max-w-[500px] h-auto"
+                style={{
+                  filter:
+                    "brightness(0.9) contrast(1.05) saturate(1.1) sepia(0.12) hue-rotate(-4deg)",
+                }}
               />
             </div>
           </div>
@@ -406,7 +410,7 @@ export default function AboutPage() {
               <div className="relative w-full aspect-[3/2]">
                 <Image
                   src="/keelcrest-logo.png"
-                  alt="Keel Crest Ltd. — brand mark"
+                  alt="KeelCrest Holding LTD. — brand mark"
                   fill
                   quality={95}
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -416,7 +420,7 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-6 order-1 lg:order-2">
-              <span className="eyebrow">Keel Crest Holding Ltd.</span>
+              <span className="eyebrow">KeelCrest Holding LTD.</span>
               <h2 className="section-title mt-6 text-parchment text-4xl md:text-5xl">
                 A private house where bold ideas become{" "}
                 <span className="italic text-gold-gradient">
@@ -428,7 +432,7 @@ export default function AboutPage() {
               <div className="divider-gold my-8" />
 
               <p className="text-base lg:text-lg font-light leading-relaxed text-parchment/70">
-                Keel Crest Ltd. is a private corporate firm that identifies,
+                KeelCrest Holding LTD. is a private corporate firm that identifies,
                 builds, and stewards the digital ventures shaping the next
                 generation of opportunity. We partner with founders, family
                 offices, and private capital to translate considered ambition
