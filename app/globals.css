@@ -20,6 +20,10 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  /* Keep default rendering at 100% so the layout matches the design on iOS Safari.
+     Does NOT override the user's Accessibility > Text Size setting — they can still scale up. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {

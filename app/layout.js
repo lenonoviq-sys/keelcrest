@@ -10,6 +10,13 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  // No `userScalable: false` — users must be able to pinch-zoom for accessibility.
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
