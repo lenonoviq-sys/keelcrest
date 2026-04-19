@@ -9,8 +9,8 @@ function StoreButtons() {
         className="group inline-flex items-center gap-3 rounded-md border border-gold/35 bg-black/40 px-5 py-3 transition-all duration-500 hover:border-gold hover:bg-gold/10"
       >
         <svg
-          className="h-9 w-9 text-parchment transition-colors group-hover:text-gold-light"
-          viewBox="0 0 24 24"
+          className="h-12 w-12 md:h-10 md:w-10 text-parchment transition-colors group-hover:text-gold-light"
+          viewBox="0 0 22 22"
           fill="currentColor"
           aria-hidden="true"
         >
@@ -62,6 +62,20 @@ function StoreButtons() {
   );
 }
 
+function PhoneImage({ src, alt, filter, className = "" }) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={1024}
+      height={1536}
+      quality={100}
+      className={`h-auto ${className}`}
+      style={{ filter }}
+    />
+  );
+}
+
 export default function Apps() {
   return (
     <>
@@ -77,9 +91,19 @@ export default function Apps() {
                 restaurants
               </h2>
 
-              <div className="divider-gold mt-8" />
+              {/* Mobile-only phone, sits between heading and body */}
+              <div className="mt-6 flex justify-center lg:hidden">
+                <PhoneImage
+                  src="/findtable-phone.png"
+                  alt="Findtable app preview on iPhone"
+                  filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
+                  className="w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px]"
+                />
+              </div>
 
-              <p className="mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
+              <div className="divider-gold mt-4 mx-auto lg:mt-8 lg:mx-0" />
+
+              <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 Findtable provides you with a comprehensive guide to the
                 finest restaurants around the world.
               </p>
@@ -87,53 +111,53 @@ export default function Apps() {
               <StoreButtons />
             </div>
 
-            <div className="lg:col-span-7 flex justify-center lg:justify-end">
-              <Image
+            {/* Desktop-only phone */}
+            <div className="hidden lg:col-span-7 lg:flex lg:justify-end">
+              <PhoneImage
                 src="/findtable-phone.png"
                 alt="Findtable app preview on iPhone"
-                width={1024}
-                height={1536}
-                quality={100}
-                className="w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] h-auto"
-                style={{
-                  filter:
-                    "brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)",
-                }}
+                filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
+                className="w-full max-w-[500px]"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ADDHOTEL — reversed layout */}
+      {/* ADDHOTEL — reversed layout on desktop */}
       <section className="relative py-28 lg:py-40 bg-night">
         <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
           <div className="grid gap-6 md:gap-10 lg:grid-cols-12 lg:gap-20 items-center">
-            <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center lg:justify-start">
-              <Image
+            {/* Desktop-only phone on the left */}
+            <div className="hidden lg:col-span-7 lg:flex lg:justify-start">
+              <PhoneImage
                 src="/addhotel-phone.png"
                 alt="ADDHOTEL app preview on iPhone"
-                width={1024}
-                height={1536}
-                quality={100}
-                className="w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] h-auto"
-                style={{
-                  filter:
-                    "brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)",
-                }}
+                filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
+                className="w-full max-w-[500px]"
               />
             </div>
 
-            <div className="lg:col-span-5 order-1 lg:order-2">
+            <div className="lg:col-span-5">
               <span className="eyebrow">ADDHOTEL</span>
               <h2 className="section-title mt-6 text-parchment text-4xl md:text-5xl">
                 Your gateway to the world&rsquo;s{" "}
                 <span className="italic text-gold-gradient">finest hotels</span>
               </h2>
 
-              <div className="divider-gold mt-8" />
+              {/* Mobile-only phone, sits between heading and body */}
+              <div className="mt-6 flex justify-center lg:hidden">
+                <PhoneImage
+                  src="/addhotel-phone.png"
+                  alt="ADDHOTEL app preview on iPhone"
+                  filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
+                  className="w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px]"
+                />
+              </div>
 
-              <p className="mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
+              <div className="divider-gold mt-4 mx-auto lg:mt-8 lg:mx-0" />
+
+              <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 ADDHOTEL connects you with a curated selection of luxury hotels
                 worldwide real time availability, verified amenities, and
                 refined details that elevate every stay.
@@ -158,9 +182,19 @@ export default function Apps() {
                 </span>
               </h2>
 
-              <div className="divider-gold mt-8" />
+              {/* Mobile-only phone, sits between heading and body */}
+              <div className="mt-6 flex justify-center lg:hidden">
+                <PhoneImage
+                  src="/findsalad-phone.png"
+                  alt="FindSalad app preview on iPhone"
+                  filter="brightness(0.9) contrast(1.05) saturate(1.1) sepia(0.12) hue-rotate(-4deg)"
+                  className="w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px]"
+                />
+              </div>
 
-              <p className="mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
+              <div className="divider-gold mt-4 mx-auto lg:mt-8 lg:mx-0" />
+
+              <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 FindSalad guides you to thoughtfully crafted salads and
                 wholesome dishes from the finest kitchens, with detailed
                 ingredients, nutritional insight, and locations tailored to
@@ -170,18 +204,13 @@ export default function Apps() {
               <StoreButtons />
             </div>
 
-            <div className="lg:col-span-7 flex justify-center lg:justify-end">
-              <Image
+            {/* Desktop-only phone */}
+            <div className="hidden lg:col-span-7 lg:flex lg:justify-end">
+              <PhoneImage
                 src="/findsalad-phone.png"
                 alt="FindSalad app preview on iPhone"
-                width={1024}
-                height={1536}
-                quality={100}
-                className="w-full max-w-[240px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] h-auto"
-                style={{
-                  filter:
-                    "brightness(0.9) contrast(1.05) saturate(1.1) sepia(0.12) hue-rotate(-4deg)",
-                }}
+                filter="brightness(0.9) contrast(1.05) saturate(1.1) sepia(0.12) hue-rotate(-4deg)"
+                className="w-full max-w-[500px]"
               />
             </div>
           </div>

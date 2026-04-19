@@ -86,8 +86,6 @@ export default function Leadership() {
                   />
                 )}
 
-                {/* Soft dark fade at bottom so text block reads cleanly */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black via-black/60 to-transparent" />
               </div>
 
               {/* Text block */}
