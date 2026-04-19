@@ -2,25 +2,16 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function IntroAnimation() {
   const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
-    // On refresh: if user landed on a non-home page, swap to home behind the intro overlay. Deferred one frame so hydration/first paint stabilizes before the route change.
-    const path = window.location.pathname;
-    let rafId;
-    if (path !== "/" && path !== "") {
-      rafId = requestAnimationFrame(() => router.replace("/"));
-    }
 
     const fadeTimer = setTimeout(() => setFading(true), 2500);
     const unmountTimer = setTimeout(() => {
@@ -29,12 +20,11 @@ export default function IntroAnimation() {
     }, 3400);
 
     return () => {
-      if (rafId) cancelAnimationFrame(rafId);
       clearTimeout(fadeTimer);
       clearTimeout(unmountTimer);
       document.body.style.overflow = originalOverflow;
     };
-  }, [router]);
+  }, []);
 
   if (!visible) return null;
 
