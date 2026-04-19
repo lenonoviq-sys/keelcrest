@@ -40,7 +40,13 @@ export default function Solutions() {
                 quality={90}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
+                style={{
+                  filter:
+                    "brightness(0.7) contrast(1.08) saturate(1.1) sepia(0.25) hue-rotate(-8deg)",
+                }}
               />
+              {/* Edge fade into page background */}
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(10,8,6,0.85)_100%)]" />
             </div>
           </div>
         </div>

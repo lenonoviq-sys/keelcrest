@@ -90,10 +90,9 @@ body {
     letter-spacing: 0.02em;
     padding: 0.5rem 0;
     transition: color 0.4s ease;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
   }
 
+  .nav-link:hover,
   .nav-link.active {
     color: #e0c88a;
   }
@@ -115,18 +114,9 @@ body {
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  .nav-link:hover::after,
   .nav-link.active::after {
     transform: scaleX(1);
-  }
-
-  /* Hover states only on pointer devices — prevents sticky tap-hover on mobile */
-  @media (hover: hover) {
-    .nav-link:hover {
-      color: #e0c88a;
-    }
-    .nav-link:hover::after {
-      transform: scaleX(1);
-    }
   }
 
   /* Soft gold divider */

@@ -53,7 +53,7 @@ export default function Leadership() {
         </div>
 
         {/* Leadership grid — two leaders, centered */}
-        <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-[240px] gap-6 sm:max-w-4xl sm:grid-cols-2 sm:gap-8">
           {leaders.map((leader, i) => (
             <article key={i} className="leader-card group overflow-hidden">
               {/* Portrait — identical aspect across all cards */}
