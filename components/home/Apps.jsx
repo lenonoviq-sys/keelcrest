@@ -3,9 +3,9 @@ import Image from "next/image";
 function StoreButtons() {
   return (
     <div className="mt-10 grid grid-cols-2 gap-4 max-w-md">
-      <a
-        href="#"
-        aria-label="Download on the App Store"
+      <button
+        type="button"
+        aria-label="Download on the App Store (coming soon)"
         className="group inline-flex items-center gap-3 rounded-md border border-gold/35 bg-black/40 px-5 py-3 transition-all duration-500 hover:border-gold hover:bg-gold/10"
       >
         <svg
@@ -24,11 +24,11 @@ function StoreButtons() {
             App Store
           </span>
         </div>
-      </a>
+      </button>
 
-      <a
-        href="#"
-        aria-label="Get it on Google Play"
+      <button
+        type="button"
+        aria-label="Get it on Google Play (coming soon)"
         className="group inline-flex items-center gap-3 rounded-md border border-gold/35 bg-black/40 px-5 py-3 transition-all duration-500 hover:border-gold hover:bg-gold/10"
       >
         <svg className="h-8 w-8" viewBox="0 0 24 24" aria-hidden="true">
@@ -57,7 +57,7 @@ function StoreButtons() {
             Google Play
           </span>
         </div>
-      </a>
+      </button>
     </div>
   );
 }

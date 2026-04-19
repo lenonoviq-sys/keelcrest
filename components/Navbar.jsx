@@ -77,10 +77,11 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="KeelCrest Holding LTD"
-            width={600}
-            height={400}
+            width={300}
+            height={200}
             priority
-            quality={100}
+            quality={90}
+            sizes="(min-width: 768px) 96px, 84px"
             className="h-14 md:h-16 w-auto transition-opacity duration-500 group-hover:opacity-90"
           />
         </Link>
@@ -139,6 +140,8 @@ export default function Navbar() {
                 <Link
                   href={l.href}
                   onClick={(e) => handleMobileNav(e, l.href)}
+                  tabIndex={open ? 0 : -1}
+                  aria-hidden={!open}
                   className={`nav-link block text-lg ${l.href === "/" ? "active" : ""}`}
                 >
                   {l.label}
