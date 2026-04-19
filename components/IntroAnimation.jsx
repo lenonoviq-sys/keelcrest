@@ -55,7 +55,7 @@ export default function IntroAnimation() {
       <div className="relative animate-intro-logo">
         <Image
           src="/keelcrest-logo.png"
-          alt="KeelCrest Holding LTD."
+          alt="KeelCrest Holding LTD"
           width={1536}
           height={1024}
           priority
@@ -64,10 +64,6 @@ export default function IntroAnimation() {
         />
       </div>
 
-      {/* Tagline below logo — completes the legal name */}
-      <span className="pointer-events-none absolute left-1/2 bottom-[22vh] -translate-x-1/2 eyebrow whitespace-nowrap animate-intro-tagline">
-        Holding Ltd.
-      </span>
     </div>
   );
 }

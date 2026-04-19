@@ -28,7 +28,7 @@ export default function Leadership() {
         <div className="flex flex-col items-center text-center mb-20">
           <Image
             src="/logo.png"
-            alt="KeelCrest Holding LTD."
+            alt="KeelCrest Holding LTD"
             width={600}
             height={400}
             quality={100}
@@ -44,11 +44,11 @@ export default function Leadership() {
           <h2 className="section-title text-parchment text-4xl md:text-5xl lg:text-6xl">
             The{" "}
             <span className="italic text-gold-gradient">Visionaries</span>{" "}
-            of KeelCrest Holding LTD.
+            of Keelcrest Holding LTD
           </h2>
 
           <p className="mt-6 font-display italic text-xl md:text-2xl text-parchment/65">
-            Defined by vision. Driven by excellence.
+            Defined by vision · Driven by excellence
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function Leadership() {
                 {leader.image ? (
                   <Image
                     src={leader.image}
-                    alt={`${leader.name} — ${leader.role}`}
+                    alt={`${leader.name}, ${leader.role}`}
                     fill
                     quality={95}
                     sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -79,7 +79,7 @@ export default function Leadership() {
                 ) : (
                   <ImageSlot
                     label={`PORTRAIT ${String(i + 1).padStart(2, "0")}`}
-                    description={`${leader.role} — formal corporate portrait, matched lighting and background across all five leaders.`}
+                    description={`${leader.role}, formal corporate portrait, matched lighting and background across all five leaders.`}
                     filename={leader.filename}
                     aspect="aspect-auto h-full"
                     className="h-full transition-transform duration-[1500ms] group-hover:scale-105"

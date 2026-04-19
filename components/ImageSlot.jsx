@@ -21,7 +21,7 @@ export default function ImageSlot({
     <div
       className={`image-slot relative w-full ${aspect} ${className}`}
       role="img"
-      aria-label={`${label}${description ? ` — ${description}` : ""}`}
+      aria-label={`${label}${description ? `, ${description}` : ""}`}
     >
       {/* Centered placeholder info */}
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center px-6">

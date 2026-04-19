@@ -16,7 +16,6 @@ export default function Solutions() {
               <span className="italic text-gold-gradient">
                 Long-Term Value
               </span>
-              .
             </h2>
 
             <div className="divider-gold my-10" />
@@ -35,7 +34,7 @@ export default function Solutions() {
             <div className="relative aspect-[3/2] w-full overflow-hidden shadow-frame">
               <Image
                 src="/solutions.png"
-                alt="Private office at dusk — city skyline at golden hour"
+                alt="Private office at dusk, city skyline at golden hour"
                 fill
                 quality={90}
                 sizes="(min-width: 1024px) 50vw, 100vw"

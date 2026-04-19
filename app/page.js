@@ -1,13 +1,13 @@
 import Hero from "@/components/home/Hero";
-import Solutions from "@/components/home/Solutions";
-import Leadership from "@/components/home/Leadership";
+import Apps from "@/components/home/Apps";
+import Principles from "@/components/home/Principles";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Solutions />
-      <Leadership />
+      <Apps />
+      <Principles />
     </>
   );
 }

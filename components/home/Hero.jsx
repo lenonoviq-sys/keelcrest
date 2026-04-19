@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute inset-0 animate-slow-zoom">
         <Image
           src="/hero.png"
-          alt="KeelCrest Holding LTD. — private horizon"
+          alt="KeelCrest Holding LTD, private horizon"
           fill
           priority
           quality={90}
@@ -25,23 +25,19 @@ export default function Hero() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.25fr_1fr]">
             {/* Left — headline */}
             <div className="animate-fade-up">
-              <div className="mb-8">
-                <span className="eyebrow">Welcome to KeelCrest Holding LTD.</span>
+              <div className="mb-3 md:mb-8">
+                <span className="eyebrow whitespace-nowrap tracking-[0.05em] sm:tracking-[0.35em] !text-gold-light">
+                  Welcome to KeelCrest Holding LTD
+                </span>
               </div>
 
               <h1 className="section-title text-parchment text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] leading-[1.08] whitespace-normal">
-                <span className="block">
-                  Strength in{" "}
-                  <span className="italic text-gold-gradient">Structure</span>.
-                </span>
-                <span className="block">
-                  Power in{" "}
-                  <span className="italic text-gold-gradient">Vision</span>.
-                </span>
+                From Vision to{" "}
+                <span className="italic text-gold-gradient">Reality</span>
               </h1>
 
-              <p className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-parchment/70 font-light">
-                Refined Excellence In Every Experience.
+              <p className="mt-3 md:mt-8 max-w-xl text-base md:text-lg leading-relaxed text-parchment/70 font-light italic font-display">
+                Turning ideas into market leaders.
               </p>
             </div>
 
@@ -61,13 +57,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Soft scroll hint */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 opacity-60">
-        <span className="text-[10px] tracking-[0.35em] uppercase text-parchment/60">
-          Scroll
-        </span>
-        <span className="h-10 w-px bg-gradient-to-b from-gold/50 to-transparent" />
-      </div>
     </section>
   );
 }

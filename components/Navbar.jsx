@@ -2,19 +2,25 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/leadership", label: "Leadership" },
   { href: "/contact", label: "Contact" },
 ];
 
+// Keep in sync with the mobile-menu CSS transition duration below.
+const MOBILE_MENU_CLOSE_MS = 320;
+
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -27,8 +33,38 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  // Close the mobile menu when the user taps anywhere outside the header.
+  useEffect(() => {
+    if (!open) return;
+    const handleOutside = (e) => {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+    };
+  }, [open]);
+
+  // Close menu first, wait for the slide/fade out, then navigate — prevents the new page painting behind an open menu.
+  const handleMobileNav = (e, href) => {
+    e.preventDefault();
+    if (href === pathname) {
+      setOpen(false);
+      return;
+    }
+    setOpen(false);
+    setTimeout(() => {
+      router.push(href);
+    }, MOBILE_MENU_CLOSE_MS);
+  };
+
   return (
     <header
+      ref={headerRef}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
         scrolled
           ? "backdrop-blur-xl bg-night/85 border-b border-gold/10"
@@ -40,7 +76,7 @@ export default function Navbar() {
         <Link href="/" className="group flex items-center">
           <Image
             src="/logo.png"
-            alt="KeelCrest Holding LTD."
+            alt="KeelCrest Holding LTD"
             width={600}
             height={400}
             priority
@@ -87,19 +123,23 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — transform+opacity keeps the blur layer a constant size, so it doesn't re-blur mid-animation */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-700 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden absolute inset-x-0 top-full bg-night/60 backdrop-blur-xl border-t border-gold/10 transition-[opacity,transform] duration-300 ease-out will-change-[opacity,transform] ${
+          open
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
+        aria-hidden={!open}
       >
-        <div className="bg-night/98 backdrop-blur-xl border-t border-gold/10 px-8 py-8">
+        <div className="px-8 py-8">
           <ul className="flex flex-col gap-6">
             {links.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`nav-link block text-lg ${pathname === l.href ? "active" : ""}`}
+                  onClick={(e) => handleMobileNav(e, l.href)}
+                  className={`nav-link block text-lg ${l.href === "/" ? "active" : ""}`}
                 >
                   {l.label}
                 </Link>

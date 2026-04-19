@@ -7,11 +7,11 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14 py-16 lg:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           {/* Brand + tagline */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
             <Link href="/" className="inline-flex items-center">
               <Image
                 src="/logo.png"
-                alt="KeelCrest Holding LTD."
+                alt="KeelCrest Holding LTD"
                 width={600}
                 height={400}
                 quality={100}
@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-parchment/50">
-              Strategic Direction Across Every Venture.
+              Strategic Direction Across Every Venture
             </p>
           </div>
 
@@ -35,6 +35,11 @@ export default function Footer() {
               <li>
                 <Link href="/about" className="transition-colors hover:text-gold-light">
                   About
+                </Link>
+              </li>
+              <li>
+                <Link href="/leadership" className="transition-colors hover:text-gold-light">
+                  Leadership
                 </Link>
               </li>
               <li>
@@ -67,7 +72,7 @@ export default function Footer() {
 
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center text-[10px] leading-relaxed text-parchment/35 md:flex-row md:items-center md:gap-2 md:text-left md:text-xs">
           <p className="tracking-[0.12em] uppercase md:tracking-[0.15em]">
-            © {new Date().getFullYear()} KeelCrest Holding LTD. <span className="block md:inline">All rights reserved.</span>
+            © {new Date().getFullYear()} KeelCrest Holding LTD <span className="block md:inline">All rights reserved</span>
           </p>
           <p className="tracking-[0.12em] uppercase md:tracking-[0.15em]">
             Defined by vision · Driven by excellence

@@ -2,9 +2,9 @@ import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact — KeelCrest Holding LTD.",
+  title: "Contact, Keelcrest Holding LTD",
   description:
-    "Begin a private conversation with KeelCrest Holding LTD. A select number of new engagements are considered each quarter.",
+    "Begin a private conversation with Keelcrest Holding LTD A select number of new engagements are considered each quarter.",
 };
 
 export default function ContactPage() {
@@ -22,12 +22,13 @@ export default function ContactPage() {
               <span className="italic text-gold-gradient">
                 private conversation
               </span>
-              .
             </h1>
             <p className="mt-8 max-w-xl text-base lg:text-lg font-light leading-relaxed text-parchment/65">
-              KeelCrest Holding LTD. accepts a limited number of new engagements each
-              quarter. Share the contours of your enquiry — our team will
-              respond with discretion.
+              <span className="block font-display italic tracking-wide text-gold-gradient">
+                Keelcrest Holding LTD
+              </span>
+              accepts a limited number of new engagements each quarter. Share the
+              contours of your enquiry, our team will respond with discretion.
             </p>
           </div>
         </div>
@@ -52,7 +53,7 @@ export default function ContactPage() {
               <div className="relative w-full aspect-[3/2] -ml-2 sm:-ml-6 lg:-ml-32">
                 <Image
                   src="/keelcrest-logo.png"
-                  alt="KeelCrest Holding LTD. — brand mark"
+                  alt="Keelcrest Holding LTD, brand mark"
                   fill
                   quality={95}
                   sizes="(min-width: 1024px) 40vw, 100vw"

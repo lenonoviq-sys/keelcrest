@@ -2,9 +2,9 @@ import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
 
 export const metadata = {
-  title: "KeelCrest Holding LTD. — Wealth Solutions for Private Clients",
+  title: "KeelCrest Holding LTD, Wealth Solutions for Private Clients",
   description:
-    "KeelCrest Holding LTD. delivers wealth solutions for family offices, corporate, and private clients. Access new wealth opportunities through the growth potential of digital assets.",
+    "KeelCrest Holding LTD delivers wealth solutions for family offices, corporate, and private clients. Access new wealth opportunities through the growth potential of digital assets.",
   icons: {
     icon: "/logo.png",
   },
