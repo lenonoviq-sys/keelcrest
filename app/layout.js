@@ -33,7 +33,7 @@ export const metadata = {
     siteName: "KeelCrest Holding LTD",
     images: [
       {
-        url: "/keelcrest-logo.png",
+        url: "/footer-logo.jpg",
         width: 1536,
         height: 1024,
         alt: "KeelCrest Holding LTD",
@@ -47,7 +47,7 @@ export const metadata = {
     title: "KeelCrest Holding LTD",
     description:
       "A private corporate firm turning considered ideas into market-leading digital ventures.",
-    images: ["/keelcrest-logo.png"],
+    images: ["/footer-logo.jpg"],
   },
 };
 
