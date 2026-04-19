@@ -2,11 +2,52 @@ import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
 
 export const metadata = {
-  title: "KeelCrest Holding LTD, Wealth Solutions for Private Clients",
+  metadataBase: new URL("https://www.keelcrest.com"),
+  title: {
+    default: "KeelCrest Holding LTD — Wealth Solutions for Private Clients",
+    template: "%s | KeelCrest Holding LTD",
+  },
   description:
-    "KeelCrest Holding LTD delivers wealth solutions for family offices, corporate, and private clients. Access new wealth opportunities through the growth potential of digital assets.",
+    "KeelCrest Holding LTD is a private corporate firm that identifies, builds, and stewards digital ventures — turning considered ideas into market-leading products.",
+  keywords: [
+    "KeelCrest",
+    "Keel Crest",
+    "KeelCrest Holding",
+    "luxury wealth firm",
+    "digital ventures",
+    "private investment",
+    "Findtable",
+    "ADDHOTEL",
+    "FindSalad",
+  ],
   icons: {
-    icon: "/logo.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "KeelCrest Holding LTD",
+    description:
+      "A private corporate firm turning considered ideas into market-leading digital ventures.",
+    url: "https://www.keelcrest.com",
+    siteName: "KeelCrest Holding LTD",
+    images: [
+      {
+        url: "/keelcrest-logo.png",
+        width: 1536,
+        height: 1024,
+        alt: "KeelCrest Holding LTD",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KeelCrest Holding LTD",
+    description:
+      "A private corporate firm turning considered ideas into market-leading digital ventures.",
+    images: ["/keelcrest-logo.png"],
   },
 };
 
