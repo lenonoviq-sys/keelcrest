@@ -10,12 +10,12 @@ export default function Footer() {
           <div className="md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
             <Link href="/" className="inline-flex items-center">
               <Image
-                src="/footer-logo.jpg"
+                src="/logo.png"
                 alt="KeelCrest Holding LTD"
-                width={1536}
-                height={1024}
+                width={600}
+                height={400}
                 quality={100}
-                className="h-24 md:h-28 w-auto"
+                className="h-20 w-auto"
               />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-parchment/50">
