@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Intro / hero banner */}
-      <section className="relative h-[70vh] min-h-[560px] w-full overflow-hidden">
+      <section className="relative h-[70vh] min-h-[480px] sm:min-h-[560px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/about-hero.png"
@@ -25,12 +25,12 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-hero-overlay pointer-events-none" />
 
         <div className="relative z-10 h-full flex items-end">
-          <div className="mx-auto w-full max-w-[1400px] px-8 lg:px-14 pb-20 lg:pb-28">
+          <div className="mx-auto w-full max-w-[1400px] px-8 lg:px-14 pb-12 sm:pb-20 lg:pb-28">
             <div className="max-w-3xl animate-fade-up">
-              <div className="mb-8">
+              <div className="mb-4 sm:mb-8">
                 <span className="eyebrow">KeelCrest Holding LTD</span>
               </div>
-              <h1 className="section-title text-parchment text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="section-title text-parchment text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                 <span className="block">
                   Strength in{" "}
                   <span className="italic text-gold-gradient">Structure</span>
@@ -40,7 +40,7 @@ export default function AboutPage() {
                   <span className="italic text-gold-gradient">Vision</span>
                 </span>
               </h1>
-              <p className="mt-6 font-display text-xl md:text-2xl italic text-parchment/70">
+              <p className="mt-4 sm:mt-6 font-display text-base sm:text-xl md:text-2xl italic text-parchment/70">
                 Refined Excellence In Every Experience.
               </p>
             </div>
@@ -49,9 +49,9 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership preview — cinematic statement */}
-      <section className="relative py-28 lg:py-40 bg-night">
+      <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
         <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
-          <div className="grid gap-16 lg:grid-cols-12 items-center">
+          <div className="grid gap-10 sm:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-6">
               <div className="relative w-full aspect-[3/2]">
                 <Image
@@ -67,14 +67,14 @@ export default function AboutPage() {
 
             <div className="lg:col-span-6">
               <span className="eyebrow">KeelCrest Holding LTD</span>
-              <h2 className="section-title mt-6 text-parchment text-4xl md:text-5xl">
+              <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
                 A private house where bold ideas become{" "}
                 <span className="italic text-gold-gradient">
                   lasting wealth
                 </span>
               </h2>
 
-              <div className="divider-gold my-8" />
+              <div className="divider-gold my-6 sm:my-8" />
 
               <p className="text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 KeelCrest Holding LTD is a private corporate firm that identifies,
@@ -85,7 +85,7 @@ export default function AboutPage() {
                 with the discipline of a house built for the long horizon.
               </p>
 
-              <p className="mt-6 font-display text-xl italic text-parchment/55">
+              <p className="mt-4 sm:mt-6 font-display text-lg sm:text-xl italic text-parchment/55">
                 &ldquo;Quiet conviction. Patient capital. Exceptional
                 craft.&rdquo;
               </p>

@@ -2,26 +2,26 @@ import Image from "next/image";
 
 export default function Solutions() {
   return (
-    <section className="relative py-28 lg:py-40 bg-night">
+    <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20 items-center">
+        <div className="grid gap-10 sm:gap-14 lg:grid-cols-12 lg:gap-20 items-center">
           {/* Left — text block */}
           <div className="lg:col-span-6">
             <div className="mb-8">
               <span className="eyebrow">Portfolio</span>
             </div>
 
-            <h2 className="section-title text-parchment text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="section-title text-parchment text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               A Private Group Focused On{" "}
               <span className="italic text-gold-gradient">
                 Long-Term Value
               </span>
             </h2>
 
-            <div className="divider-gold my-10" />
+            <div className="divider-gold my-6 sm:my-10" />
 
             <div className="max-w-lg">
-              <p className="font-display text-xl md:text-2xl italic text-parchment/55 leading-relaxed">
+              <p className="font-display text-lg sm:text-xl md:text-2xl italic text-parchment/55 leading-relaxed">
                 We are a privately held group focused on strategic investments
                 and long-term value creation. Our portfolio reflects a
                 commitment to quality, discipline, and sustainable growth.

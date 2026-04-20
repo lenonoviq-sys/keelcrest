@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-[720px] overflow-hidden">
+    <section className="relative w-full h-screen min-h-[560px] sm:min-h-[720px] overflow-hidden">
       {/* Full-bleed hero wallpaper with slow cinematic zoom */}
       <div className="absolute inset-0 animate-slow-zoom">
         <Image
@@ -31,12 +31,12 @@ export default function Hero() {
                 </span>
               </div>
 
-              <h1 className="section-title text-parchment text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] leading-[1.08] whitespace-normal">
+              <h1 className="section-title text-parchment text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] leading-[1.08] whitespace-normal">
                 From Vision to{" "}
                 <span className="italic text-gold-gradient">Reality</span>
               </h1>
 
-              <p className="mt-3 md:mt-8 max-w-xl text-base md:text-lg leading-relaxed text-parchment/70 font-light italic font-display">
+              <p className="mt-3 md:mt-8 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-parchment/70 font-light italic font-display">
                 Turning ideas into market leaders.
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function Hero() {
                 height={1024}
                 priority
                 quality={100}
-                className="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[640px] xl:max-w-[760px] h-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
+                className="w-full max-w-[260px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[640px] xl:max-w-[760px] h-auto drop-shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
               />
             </div>
           </div>

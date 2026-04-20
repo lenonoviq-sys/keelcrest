@@ -19,39 +19,39 @@ export default function WelcomePage() {
       </div>
 
       {/* Right — sign-in panel */}
-      <div className="relative flex w-full lg:w-1/2 min-h-screen items-center justify-center px-8 py-16 bg-night">
+      <div className="relative flex w-full lg:w-1/2 min-h-screen items-center justify-center px-6 py-12 sm:px-8 sm:py-16 bg-night">
         <div className="w-full max-w-md animate-fade-up">
           {/* Brand mark */}
-          <Link href="/" className="inline-flex items-center mb-16">
+          <Link href="/" className="inline-flex items-center mb-10 sm:mb-16">
             <Image
               src="/logo.png"
               alt="KeelCrest Holding LTD"
               width={600}
               height={400}
               quality={100}
-              className="h-20 w-auto"
+              className="h-16 sm:h-20 w-auto"
             />
           </Link>
 
           {/* Heading */}
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4 mb-4 sm:mb-6">
             <span className="h-px w-10 bg-gold/70" />
             <span className="eyebrow">Private Access</span>
           </div>
 
-          <h1 className="section-title text-parchment text-4xl md:text-5xl mb-4">
+          <h1 className="section-title text-parchment text-3xl sm:text-4xl md:text-5xl mb-4">
             Welcome to{" "}
             <span className="italic text-gold-gradient">KeelCrest Holding LTD</span>
           </h1>
 
-          <p className="text-parchment/55 leading-relaxed mb-12">
+          <p className="text-sm sm:text-base text-parchment/55 leading-relaxed mb-8 sm:mb-12">
             Sign in to your private client portal to access reports,
             statements, and confidential correspondence.
           </p>
 
           <WelcomeForm />
 
-          <p className="mt-10 text-xs text-parchment/35 leading-relaxed">
+          <p className="mt-6 sm:mt-10 text-xs text-parchment/35 leading-relaxed">
             For assistance, contact{" "}
             <a
               href="mailto:info@keelcrest.com"
@@ -64,7 +64,7 @@ export default function WelcomePage() {
 
           <Link
             href="/"
-            className="mt-12 inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-parchment/45 hover:text-gold-light transition-colors"
+            className="mt-8 sm:mt-12 inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-parchment/45 hover:text-gold-light transition-colors"
           >
             <svg
               width="12"

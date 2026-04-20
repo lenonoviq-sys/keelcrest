@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 // Navigation order matches the Navbar. Swipe-left = next, swipe-right = previous.
-const order = ["/", "/about", "/leadership", "/contact"];
+const order = ["/", "/leadership", "/portfolio"];
 
 // Thresholds chosen to avoid false positives from scrolling, taps, or text selection.
 const MIN_X = 80; // px — must travel this far horizontally

@@ -12,7 +12,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="w-full">
-      <div className="grid gap-10 md:grid-cols-2">
+      <div className="grid gap-6 sm:gap-10 md:grid-cols-2">
         <div>
           <label className="label-luxury" htmlFor="name">
             Full Name
@@ -65,7 +65,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-6 sm:mt-10">
         <label className="label-luxury" htmlFor="message">
           Message
         </label>
@@ -79,7 +79,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="mt-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-8 sm:mt-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-parchment/40 tracking-wide max-w-md">
           Correspondence is received in confidence. A member of our team will
           be in touch within two business days.

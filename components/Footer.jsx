@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="relative bg-night border-t border-gold/10">
-      <div className="mx-auto max-w-[1400px] px-8 lg:px-14 py-16 lg:py-20">
-        <div className="grid gap-12 md:grid-cols-12">
+      <div className="mx-auto max-w-[1400px] px-8 lg:px-14 py-12 sm:py-16 lg:py-20">
+        <div className="grid gap-8 sm:gap-12 md:grid-cols-12">
           {/* Brand + tagline */}
           <div className="md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
             <Link href="/" className="inline-flex items-center">
@@ -15,17 +15,17 @@ export default function Footer() {
                 width={600}
                 height={400}
                 quality={100}
-                className="h-20 w-auto"
+                className="h-16 sm:h-20 w-auto"
               />
             </Link>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-parchment/50">
+            <p className="mt-4 sm:mt-5 max-w-sm text-sm leading-relaxed text-parchment/50">
               Strategic Direction Across Every Venture
             </p>
           </div>
 
           {/* Nav */}
           <div className="md:col-span-3">
-            <p className="label-luxury mb-6">Navigation</p>
+            <p className="label-luxury mb-4 sm:mb-6">Navigation</p>
             <ul className="space-y-3 text-sm text-parchment/70">
               <li>
                 <Link href="/" className="transition-colors hover:text-gold-light">
@@ -43,6 +43,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/portfolio" className="transition-colors hover:text-gold-light">
+                  Portfolio
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="transition-colors hover:text-gold-light">
                   Contact
                 </Link>
@@ -52,7 +57,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-4">
-            <p className="label-luxury mb-6">Contact</p>
+            <p className="label-luxury mb-4 sm:mb-6">Contact</p>
             <ul className="space-y-3 text-sm text-parchment/70">
               <li>
                 <a
@@ -68,7 +73,7 @@ export default function Footer() {
         </div>
 
         {/* Soft gold divider */}
-        <div className="mt-16 h-px w-full bg-gold-sheen opacity-40" />
+        <div className="mt-10 sm:mt-16 h-px w-full bg-gold-sheen opacity-40" />
 
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center text-[10px] leading-relaxed text-parchment/35 md:flex-row md:items-center md:gap-2 md:text-left md:text-xs">
           <p className="tracking-[0.12em] uppercase md:tracking-[0.15em]">

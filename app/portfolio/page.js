@@ -1,21 +1,21 @@
 import Image from "next/image";
-import Leadership from "@/components/home/Leadership";
+import Solutions from "@/components/home/Solutions";
 
 export const metadata = {
-  title: "Leadership, KeelCrest Holding LTD",
+  title: "Portfolio, KeelCrest Holding LTD",
   description:
-    "The leadership of KeelCrest Holding LTD, a private firm shaping the digital ventures of tomorrow.",
+    "The portfolio of KeelCrest Holding LTD — private investments and long-term value creation across digital ventures.",
 };
 
-export default function LeadershipPage() {
+export default function PortfolioPage() {
   return (
     <>
       {/* Hero banner */}
       <section className="relative w-full h-screen min-h-[520px] sm:min-h-[640px] overflow-hidden">
         <div className="absolute inset-0 animate-slow-zoom">
           <Image
-            src="/leadership-hero.png"
-            alt="Private boardroom at dusk, city skyline at golden hour"
+            src="/portfolio-hero.png"
+            alt="Private office, city skyline at golden hour"
             fill
             priority
             quality={90}
@@ -29,21 +29,23 @@ export default function LeadershipPage() {
           <div className="mx-auto w-full max-w-[1400px] px-8 lg:px-14 pb-12 sm:pb-20 lg:pb-28">
             <div className="max-w-3xl animate-fade-up">
               <div className="mb-4 sm:mb-8">
-                <span className="eyebrow">Leadership</span>
+                <span className="eyebrow">Portfolio</span>
               </div>
               <h1 className="section-title text-parchment text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                At the head of every{" "}
-                <span className="italic text-gold-gradient">decision</span>
+                A private group focused on{" "}
+                <span className="italic text-gold-gradient">
+                  long-term value
+                </span>
               </h1>
               <p className="mt-4 sm:mt-6 font-display text-base sm:text-xl md:text-2xl italic text-parchment/70">
-                Disciplined counsel. Unwavering judgement. Long-horizon thinking.
+                Strategic investments. Quiet conviction. Patient capital.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <Leadership />
+      <Solutions />
     </>
   );
 }

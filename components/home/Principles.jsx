@@ -15,15 +15,15 @@ const pillars = [
 
 export default function Principles() {
   return (
-    <section className="relative py-28 lg:py-36 bg-night">
+    <section className="relative py-16 sm:py-20 lg:py-36 bg-night">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-12 sm:mb-20">
           <div className="flex items-center gap-4 mb-6">
             <span className="h-px w-10 bg-gold/60" />
             <span className="eyebrow">What guides us</span>
             <span className="h-px w-10 bg-gold/60" />
           </div>
-          <h2 className="section-title text-parchment text-4xl md:text-5xl">
+          <h2 className="section-title text-parchment text-3xl sm:text-4xl md:text-5xl">
             The principles behind every{" "}
             <span className="italic text-gold-gradient">venture we build</span>
           </h2>
@@ -33,7 +33,7 @@ export default function Principles() {
           {pillars.map((p) => (
             <div
               key={p.label}
-              className="bg-night px-8 py-12 lg:px-12 lg:py-16 transition-colors duration-700 hover:bg-bronze-900"
+              className="bg-night px-6 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16 transition-colors duration-700 hover:bg-bronze-900"
             >
               <p className="label-luxury mb-6">{p.label}</p>
               <p className="text-base leading-relaxed text-parchment/70">

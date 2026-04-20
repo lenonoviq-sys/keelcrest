@@ -20,34 +20,34 @@ const leaders = [
 
 export default function Leadership() {
   return (
-    <section className="relative py-28 lg:py-40 bg-night">
+    <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gold-sheen opacity-30" />
 
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
         {/* Section header — centered */}
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-12 sm:mb-20">
           <Image
             src="/logo.png"
             alt="KeelCrest Holding LTD"
             width={600}
             height={400}
             quality={100}
-            className="h-24 md:h-28 w-auto -mb-2"
+            className="h-16 sm:h-24 md:h-28 w-auto -mb-2"
           />
 
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4 mb-4 sm:mb-6">
             <span className="h-px w-10 bg-gold/60" />
             <span className="eyebrow">Leadership</span>
             <span className="h-px w-10 bg-gold/60" />
           </div>
 
-          <h2 className="section-title text-parchment text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="section-title text-parchment text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             The{" "}
             <span className="italic text-gold-gradient">Visionaries</span>{" "}
             of Keelcrest Holding LTD
           </h2>
 
-          <p className="mt-6 font-display italic text-xl md:text-2xl text-parchment/65">
+          <p className="mt-4 sm:mt-6 font-display italic text-base sm:text-xl md:text-2xl text-parchment/65">
             Defined by vision · Driven by excellence
           </p>
         </div>
@@ -89,15 +89,15 @@ export default function Leadership() {
               </div>
 
               {/* Text block */}
-              <div className="p-7">
-                <h3 className="font-display text-2xl font-light text-parchment">
+              <div className="p-5 sm:p-7">
+                <h3 className="font-display text-xl sm:text-2xl font-light text-parchment">
                   {leader.name}
                 </h3>
-                <p className="mt-1 text-sm tracking-[0.15em] uppercase text-gold/80">
+                <p className="mt-1 text-xs sm:text-sm tracking-[0.15em] uppercase text-gold/80">
                   {leader.role}
                 </p>
-                <div className="mt-5 h-px w-10 bg-gold/40" />
-                <p className="mt-5 text-sm leading-relaxed text-parchment/55">
+                <div className="mt-4 sm:mt-5 h-px w-10 bg-gold/40" />
+                <p className="mt-4 sm:mt-5 text-sm leading-relaxed text-parchment/55">
                   {leader.bio}
                 </p>
               </div>

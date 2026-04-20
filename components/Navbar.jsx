@@ -5,11 +5,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+// hideOnMobile: shown on desktop only; mobile nav keeps just Home/Leadership/Portfolio
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About", hideOnMobile: true },
   { href: "/leadership", label: "Leadership" },
-  { href: "/contact", label: "Contact" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/contact", label: "Contact", hideOnMobile: true },
 ];
 
 export default function Navbar() {
@@ -31,9 +33,9 @@ export default function Navbar() {
           : "bg-gradient-to-b from-night/60 via-night/20 to-transparent"
       }`}
     >
-      <nav className="relative mx-auto flex h-16 md:h-24 max-w-[1400px] items-center md:justify-between px-4 sm:px-6 md:px-8 lg:px-14">
+      <nav className="relative mx-auto flex h-16 md:h-24 max-w-[1400px] items-center md:justify-between px-2 sm:px-4 md:px-8 lg:px-14">
         {/* Brand mark — full logo */}
-        <Link href="/" className="group flex items-center shrink-0">
+        <Link href="/" className="group flex items-center shrink-0 -ml-1 md:ml-0">
           <Image
             src="/logo.png"
             alt="KeelCrest Holding LTD"
@@ -49,7 +51,10 @@ export default function Navbar() {
         {/* Nav links — centered on mobile, right-aligned on desktop */}
         <ul className="absolute left-1/2 -translate-x-1/2 flex items-center gap-4 md:static md:left-auto md:translate-x-0 md:gap-10 lg:gap-12">
           {links.map((l) => (
-            <li key={l.href}>
+            <li
+              key={l.href}
+              className={l.hideOnMobile ? "hidden md:list-item" : ""}
+            >
               <Link
                 href={l.href}
                 className={`nav-link text-[14px] sm:text-[15px] md:text-[0.95rem] tracking-[0.04em] md:tracking-normal ${

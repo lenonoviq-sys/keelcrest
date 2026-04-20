@@ -2,7 +2,7 @@
 // Sitemap must use the canonical form or Google reports a "Redirect error".
 export default function sitemap() {
   const base = "https://www.keelcrest.com";
-  const routes = ["/", "/about/", "/leadership/", "/contact/"];
+  const routes = ["/", "/about/", "/leadership/", "/portfolio/", "/contact/"];
   const lastModified = new Date();
 
   return routes.map((path) => ({
