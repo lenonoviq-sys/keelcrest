@@ -105,8 +105,11 @@ export default function Apps() {
               <div className="divider-gold hidden lg:block lg:mt-8" />
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
-                Findtable provides you with a comprehensive guide to the
-                finest restaurants around the world.
+                <span className="font-display tracking-wide text-gold-gradient">
+                  Findtable
+                </span>{" "}
+                provides you with a comprehensive guide to the finest
+                restaurants around the world.
               </p>
 
               <StoreButtons />
@@ -161,7 +164,10 @@ export default function Apps() {
               <div className="divider-gold hidden lg:block lg:mt-8" />
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
-                ADDHOTEL connects you with a curated selection of luxury hotels
+                <span className="font-display tracking-wide text-gold-gradient">
+                  ADDHOTEL
+                </span>{" "}
+                connects you with a curated selection of luxury hotels
                 worldwide real time availability, verified amenities, and
                 refined details that elevate every stay.
               </p>
@@ -202,10 +208,12 @@ export default function Apps() {
               <div className="divider-gold hidden lg:block lg:mt-8" />
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
-                FindSalad guides you to thoughtfully crafted salads and
-                wholesome dishes from the finest kitchens, with detailed
-                ingredients, nutritional insight, and locations tailored to
-                your taste.
+                <span className="font-display tracking-wide text-gold-gradient">
+                  FindSalad
+                </span>{" "}
+                guides you to thoughtfully crafted salads and wholesome
+                dishes from the finest kitchens, with detailed ingredients,
+                nutritional insight, and locations tailored to your taste.
               </p>
 
               <StoreButtons />
@@ -260,9 +268,12 @@ export default function Apps() {
               <div className="divider-gold hidden lg:block lg:mt-8" />
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
-                FIND&amp;MOVE guides you through a curated selection of
-                premier properties and residences worldwide, helping you
-                discover the right home for your next chapter.
+                <span className="font-display tracking-wide text-gold-gradient">
+                  FIND&amp;MOVE
+                </span>{" "}
+                guides you through a curated selection of premier
+                properties and residences worldwide, helping you discover
+                the right home for your next chapter.
               </p>
 
               <StoreButtons />
