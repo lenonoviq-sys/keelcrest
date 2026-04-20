@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Leadership from "@/components/home/Leadership";
+import Ownership from "@/components/home/Ownership";
 
 export const metadata = {
   title: "Leadership, KeelCrest Holding LTD",
@@ -11,7 +12,7 @@ export default function LeadershipPage() {
   return (
     <>
       {/* Hero banner */}
-      <section className="relative w-full h-screen min-h-[520px] sm:min-h-[640px] overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[420px] sm:h-screen sm:min-h-[640px] overflow-hidden">
         <div className="absolute inset-0 animate-slow-zoom">
           <Image
             src="/leadership-hero.png"
@@ -21,12 +22,16 @@ export default function LeadershipPage() {
             quality={90}
             sizes="100vw"
             className="object-cover object-center"
+            style={{
+              filter:
+                "saturate(0.55) contrast(1.12) brightness(0.9) sepia(0.08)",
+            }}
           />
         </div>
         <div className="absolute inset-0 bg-hero-overlay pointer-events-none" />
 
-        <div className="relative z-10 h-full flex items-end">
-          <div className="mx-auto w-full max-w-[1400px] px-8 lg:px-14 pb-12 sm:pb-20 lg:pb-28">
+        <div className="relative z-10 h-full flex items-center sm:items-end">
+          <div className="mx-auto w-full max-w-[1400px] px-8 lg:px-14 sm:pb-20 lg:pb-28">
             <div className="max-w-3xl animate-fade-up">
               <div className="mb-4 sm:mb-8">
                 <span className="eyebrow">Leadership</span>
@@ -36,13 +41,18 @@ export default function LeadershipPage() {
                 <span className="italic text-gold-gradient">decision</span>
               </h1>
               <p className="mt-4 sm:mt-6 font-display text-base sm:text-xl md:text-2xl italic text-parchment/70">
-                Disciplined counsel. Unwavering judgement. Long-horizon thinking.
+                Disciplined counsel. Unwavering judgement.{" "}
+                <span className="whitespace-nowrap sm:whitespace-normal">
+                  Long-horizon
+                </span>{" "}
+                thinking.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <Ownership />
       <Leadership />
     </>
   );

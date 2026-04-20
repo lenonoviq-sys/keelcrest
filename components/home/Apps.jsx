@@ -80,7 +80,7 @@ export default function Apps() {
   return (
     <>
       {/* Findtable */}
-      <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
+      <section className="relative py-6 sm:py-10 lg:py-16 bg-night">
         <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
           <div className="grid gap-6 md:gap-10 lg:grid-cols-12 lg:gap-20">
             <div className="lg:col-span-5">
@@ -101,7 +101,7 @@ export default function Apps() {
                 />
               </div>
 
-              <div className="divider-gold mt-4 mx-auto lg:mt-8 lg:mx-0" />
+              <div className="divider-gold hidden lg:block lg:mt-8" />
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 Findtable provides you with a comprehensive guide to the
@@ -109,6 +109,8 @@ export default function Apps() {
               </p>
 
               <StoreButtons />
+
+              <div className="divider-gold mx-auto mt-10 lg:hidden" />
             </div>
 
             {/* Desktop-only phone */}
@@ -125,7 +127,7 @@ export default function Apps() {
       </section>
 
       {/* ADDHOTEL — reversed layout on desktop */}
-      <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
+      <section className="relative py-6 sm:py-10 lg:py-16 bg-night">
         <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
           <div className="grid gap-6 md:gap-10 lg:grid-cols-12 lg:gap-20 items-center">
             {/* Desktop-only phone on the left */}
@@ -155,7 +157,7 @@ export default function Apps() {
                 />
               </div>
 
-              <div className="divider-gold mt-4 mx-auto lg:mt-8 lg:mx-0" />
+              <div className="divider-gold hidden lg:block lg:mt-8" />
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 ADDHOTEL connects you with a curated selection of luxury hotels
@@ -164,13 +166,15 @@ export default function Apps() {
               </p>
 
               <StoreButtons />
+
+              <div className="divider-gold mx-auto mt-10 lg:hidden" />
             </div>
           </div>
         </div>
       </section>
 
       {/* FindSalad */}
-      <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
+      <section className="relative py-6 sm:py-10 lg:py-16 bg-night">
         <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
           <div className="grid gap-6 md:gap-10 lg:grid-cols-12 lg:gap-20 items-center">
             <div className="lg:col-span-5">
@@ -192,7 +196,7 @@ export default function Apps() {
                 />
               </div>
 
-              <div className="divider-gold mt-4 mx-auto lg:mt-8 lg:mx-0" />
+              <div className="divider-gold hidden lg:block lg:mt-8" />
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 FindSalad guides you to thoughtfully crafted salads and
@@ -202,6 +206,8 @@ export default function Apps() {
               </p>
 
               <StoreButtons />
+
+              <div className="divider-gold mx-auto mt-10 lg:hidden" />
             </div>
 
             {/* Desktop-only phone */}

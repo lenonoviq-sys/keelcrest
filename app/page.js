@@ -1,12 +1,12 @@
 import Hero from "@/components/home/Hero";
-import Apps from "@/components/home/Apps";
+import Approach from "@/components/home/Approach";
 import Principles from "@/components/home/Principles";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Apps />
+      <Approach />
       <Principles />
     </>
   );

@@ -52,8 +52,8 @@ export default function Leadership() {
           </p>
         </div>
 
-        {/* Leadership grid — two leaders, centered */}
-        <div className="mx-auto grid max-w-[240px] gap-6 sm:max-w-4xl sm:grid-cols-2 sm:gap-8">
+        {/* Leadership grid — two leaders, side-by-side */}
+        <div className="mx-auto grid grid-cols-2 max-w-md gap-3 sm:max-w-4xl sm:gap-8">
           {leaders.map((leader, i) => (
             <article key={i} className="leader-card group overflow-hidden">
               {/* Portrait — identical aspect across all cards */}
@@ -89,15 +89,15 @@ export default function Leadership() {
               </div>
 
               {/* Text block */}
-              <div className="p-5 sm:p-7">
-                <h3 className="font-display text-xl sm:text-2xl font-light text-parchment">
+              <div className="p-3 sm:p-7">
+                <h3 className="font-display text-base sm:text-2xl font-light text-parchment leading-tight">
                   {leader.name}
                 </h3>
-                <p className="mt-1 text-xs sm:text-sm tracking-[0.15em] uppercase text-gold/80">
+                <p className="mt-1 text-[10px] sm:text-sm tracking-[0.15em] uppercase text-gold/80">
                   {leader.role}
                 </p>
-                <div className="mt-4 sm:mt-5 h-px w-10 bg-gold/40" />
-                <p className="mt-4 sm:mt-5 text-sm leading-relaxed text-parchment/55">
+                <div className="mt-3 sm:mt-5 h-px w-8 sm:w-10 bg-gold/40" />
+                <p className="mt-3 sm:mt-5 text-xs sm:text-sm leading-relaxed text-parchment/55">
                   {leader.bio}
                 </p>
               </div>

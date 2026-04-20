@@ -33,7 +33,7 @@ export default function Solutions() {
           <div className="lg:col-span-6">
             <div className="relative aspect-[3/2] w-full overflow-hidden shadow-frame">
               <Image
-                src="/solutions.png"
+                src="/office-image.png"
                 alt="Private office at dusk, city skyline at golden hour"
                 fill
                 quality={90}
@@ -41,7 +41,7 @@ export default function Solutions() {
                 className="object-cover"
                 style={{
                   filter:
-                    "brightness(0.7) contrast(1.08) saturate(1.1) sepia(0.25) hue-rotate(-8deg)",
+                    "saturate(0.55) contrast(1.12) brightness(0.9) sepia(0.08)",
                 }}
               />
               {/* Edge fade into page background */}

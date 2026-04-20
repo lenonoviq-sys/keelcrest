@@ -20,6 +20,10 @@ export default function AboutPage() {
             quality={90}
             sizes="100vw"
             className="object-cover object-center"
+            style={{
+              filter:
+                "saturate(0.55) contrast(1.12) brightness(0.9) sepia(0.08)",
+            }}
           />
         </div>
         <div className="absolute inset-0 bg-hero-overlay pointer-events-none" />

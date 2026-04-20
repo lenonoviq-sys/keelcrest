@@ -4,11 +4,11 @@ import SiteChrome from "@/components/SiteChrome";
 export const metadata = {
   metadataBase: new URL("https://www.keelcrest.com"),
   title: {
-    default: "KeelCrest Holding LTD — Wealth Solutions for Private Clients",
+    default: "KeelCrest Holding LTD: Wealth Solutions for Private Clients",
     template: "%s | KeelCrest Holding LTD",
   },
   description:
-    "KeelCrest Holding LTD is a private corporate firm that identifies, builds, and stewards digital ventures — turning considered ideas into market-leading products.",
+    "KeelCrest Holding LTD is a private corporate firm that identifies, builds, and stewards digital ventures, turning considered ideas into market-leading products.",
   keywords: [
     "KeelCrest",
     "Keel Crest",

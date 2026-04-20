@@ -24,6 +24,11 @@ body {
      Does NOT override the user's Accessibility > Text Size setting — they can still scale up. */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Match the page scrollbar across browsers (Firefox, Edge, Android Chrome) and
+     hint iOS/macOS overlay scrollbars to render in dark style. */
+  color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(166, 139, 71, 0.55) var(--night);
 }
 
 body {
