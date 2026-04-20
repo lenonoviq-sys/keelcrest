@@ -62,7 +62,7 @@ function StoreButtons() {
   );
 }
 
-function PhoneImage({ src, alt, filter, className = "" }) {
+function PhoneImage({ src, alt, className = "" }) {
   return (
     <Image
       src={src}
@@ -71,7 +71,6 @@ function PhoneImage({ src, alt, filter, className = "" }) {
       height={1536}
       quality={100}
       className={`h-auto ${className}`}
-      style={{ filter }}
     />
   );
 }
@@ -84,7 +83,10 @@ export default function Apps() {
         <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
           <div className="grid gap-6 md:gap-10 lg:grid-cols-12 lg:gap-20">
             <div className="lg:col-span-5">
-              <span className="eyebrow">Findtable</span>
+              <span className="inline-flex items-center gap-3">
+                <span className="hidden h-px w-6 bg-gradient-to-r from-transparent to-gold/60 max-sm:inline-block" />
+                <span className="eyebrow eyebrow-app">Findtable</span>
+              </span>
               <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
                 Your guide to the best{" "}
                 <span className="italic text-gold-gradient">fine dining</span>{" "}
@@ -96,7 +98,6 @@ export default function Apps() {
                 <PhoneImage
                   src="/findtable-phone.png"
                   alt="Findtable app preview on iPhone"
-                  filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
                   className="w-full max-w-[200px] sm:max-w-[280px] md:max-w-[400px]"
                 />
               </div>
@@ -118,7 +119,6 @@ export default function Apps() {
               <PhoneImage
                 src="/findtable-phone.png"
                 alt="Findtable app preview on iPhone"
-                filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
                 className="w-full max-w-[500px]"
               />
             </div>
@@ -135,13 +135,15 @@ export default function Apps() {
               <PhoneImage
                 src="/addhotel-phone.png"
                 alt="ADDHOTEL app preview on iPhone"
-                filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
                 className="w-full max-w-[500px]"
               />
             </div>
 
             <div className="lg:col-span-5">
-              <span className="eyebrow">ADDHOTEL</span>
+              <span className="inline-flex items-center gap-3">
+                <span className="hidden h-px w-6 bg-gradient-to-r from-transparent to-gold/60 max-sm:inline-block" />
+                <span className="eyebrow eyebrow-app">ADDHOTEL</span>
+              </span>
               <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
                 Your gateway to the world&rsquo;s{" "}
                 <span className="italic text-gold-gradient">finest hotels</span>
@@ -152,7 +154,6 @@ export default function Apps() {
                 <PhoneImage
                   src="/addhotel-phone.png"
                   alt="ADDHOTEL app preview on iPhone"
-                  filter="brightness(0.82) contrast(1.1) saturate(1.2) sepia(0.25) hue-rotate(-8deg)"
                   className="w-full max-w-[200px] sm:max-w-[280px] md:max-w-[400px]"
                 />
               </div>
@@ -178,7 +179,10 @@ export default function Apps() {
         <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
           <div className="grid gap-6 md:gap-10 lg:grid-cols-12 lg:gap-20 items-center">
             <div className="lg:col-span-5">
-              <span className="eyebrow">FindSalad</span>
+              <span className="inline-flex items-center gap-3">
+                <span className="hidden h-px w-6 bg-gradient-to-r from-transparent to-gold/60 max-sm:inline-block" />
+                <span className="eyebrow eyebrow-app">FindSalad</span>
+              </span>
               <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
                 Fresh choices for a{" "}
                 <span className="italic text-gold-gradient">
@@ -191,7 +195,6 @@ export default function Apps() {
                 <PhoneImage
                   src="/findsalad-phone.png"
                   alt="FindSalad app preview on iPhone"
-                  filter="brightness(0.9) contrast(1.05) saturate(1.1) sepia(0.12) hue-rotate(-4deg)"
                   className="w-full max-w-[200px] sm:max-w-[280px] md:max-w-[400px]"
                 />
               </div>
@@ -215,9 +218,56 @@ export default function Apps() {
               <PhoneImage
                 src="/findsalad-phone.png"
                 alt="FindSalad app preview on iPhone"
-                filter="brightness(0.9) contrast(1.05) saturate(1.1) sepia(0.12) hue-rotate(-4deg)"
                 className="w-full max-w-[500px]"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FIND&MOVE — reversed layout on desktop */}
+      <section className="relative py-6 sm:py-10 lg:py-16 bg-night">
+        <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
+          <div className="grid gap-6 md:gap-10 lg:grid-cols-12 lg:gap-20 items-center">
+            {/* Desktop-only phone on the left */}
+            <div className="hidden lg:col-span-7 lg:flex lg:justify-start">
+              <PhoneImage
+                src="/findmove-phone.png"
+                alt="FIND&MOVE app preview on iPhone"
+                className="w-full max-w-[500px]"
+              />
+            </div>
+
+            <div className="lg:col-span-5">
+              <span className="inline-flex items-center gap-3">
+                <span className="hidden h-px w-6 bg-gradient-to-r from-transparent to-gold/60 max-sm:inline-block" />
+                <span className="eyebrow eyebrow-app">FIND&amp;MOVE</span>
+              </span>
+              <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
+                Discover the world&rsquo;s{" "}
+                <span className="italic text-gold-gradient">finest residences</span>
+              </h2>
+
+              {/* Mobile-only phone, sits between heading and body */}
+              <div className="mt-6 flex justify-center lg:hidden">
+                <PhoneImage
+                  src="/findmove-phone.png"
+                  alt="FIND&MOVE app preview on iPhone"
+                  className="w-full max-w-[200px] sm:max-w-[280px] md:max-w-[400px]"
+                />
+              </div>
+
+              <div className="divider-gold hidden lg:block lg:mt-8" />
+
+              <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
+                FIND&amp;MOVE guides you through a curated selection of
+                premier properties and residences worldwide, helping you
+                discover the right home for your next chapter.
+              </p>
+
+              <StoreButtons />
+
+              <div className="divider-gold mx-auto mt-10 lg:hidden" />
             </div>
           </div>
         </div>

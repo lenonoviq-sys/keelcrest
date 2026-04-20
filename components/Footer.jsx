@@ -69,6 +69,33 @@ export default function Footer() {
               </li>
               <li className="text-parchment/50">Private Office · By Appointment</li>
             </ul>
+
+            {/* Social icons — placeholder hrefs, swap when accounts are live */}
+            <ul className="mt-5 flex items-center gap-4">
+              {[
+                { name: "Facebook", src: "/social-facebook.png", size: "h-5 w-5", href: "#" },
+                { name: "X", src: "/social-twitter.png", size: "h-5 w-5", href: "#" },
+                { name: "LinkedIn", src: "/social-linkedin.png", size: "h-5 w-5", href: "#" },
+                { name: "Instagram", src: "/social-instagram.png", size: "h-6 w-6", href: "#" },
+              ].map((s) => (
+                <li key={s.name}>
+                  <a
+                    href={s.href}
+                    aria-label={s.name}
+                    className="block opacity-70 transition-opacity duration-300 hover:opacity-100"
+                  >
+                    <Image
+                      src={s.src}
+                      alt=""
+                      width={512}
+                      height={512}
+                      quality={95}
+                      className={`${s.size} object-contain`}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

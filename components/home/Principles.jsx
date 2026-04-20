@@ -15,7 +15,7 @@ const pillars = [
 
 export default function Principles() {
   return (
-    <section className="relative pt-6 pb-16 sm:py-20 lg:py-36 bg-night">
+    <section className="relative pt-6 pb-6 sm:py-20 lg:py-36 bg-night">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
         <div className="flex flex-col items-center text-center mb-12 sm:mb-20">
           <div className="flex items-center gap-4 mb-6">
@@ -29,7 +29,7 @@ export default function Principles() {
           </h2>
         </div>
 
-        <div className="grid gap-px bg-gold/10 md:grid-cols-3 border-y border-gold/10">
+        <div className="grid gap-px bg-gold/10 md:grid-cols-3 border-t border-gold/10 md:border-y">
           {pillars.map((p) => (
             <div
               key={p.label}

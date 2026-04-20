@@ -5,12 +5,14 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-// hideOnMobile: shown on desktop only; mobile nav keeps just Home/Leadership/Portfolio
+// hideOnMobile: shown on desktop only.
+// mobileOrder: CSS flex order on mobile (resets on md+), so the mobile nav reads
+// Home → Portfolio → Leadership while desktop keeps the DOM order.
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About", hideOnMobile: true },
-  { href: "/leadership", label: "Leadership" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/leadership", label: "Leadership", mobileOrder: "order-3" },
+  { href: "/portfolio", label: "Portfolio", mobileOrder: "order-2" },
   { href: "/contact", label: "Contact", hideOnMobile: true },
 ];
 
@@ -53,7 +55,9 @@ export default function Navbar() {
           {links.map((l) => (
             <li
               key={l.href}
-              className={l.hideOnMobile ? "hidden md:list-item" : ""}
+              className={`${l.hideOnMobile ? "hidden md:list-item" : ""} ${
+                l.mobileOrder ? `${l.mobileOrder} md:order-none` : ""
+              }`}
             >
               <Link
                 href={l.href}

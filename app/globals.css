@@ -84,6 +84,21 @@ body {
     color: rgba(201, 169, 97, 0.9);
   }
 
+  /* App-name eyebrow — slightly larger on mobile with a soft gold glow,
+     same font and color, reverts to default eyebrow on tablet+ */
+  .eyebrow-app {
+    font-size: 0.95rem;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 12px rgba(201, 169, 97, 0.45);
+  }
+  @media (min-width: 640px) {
+    .eyebrow-app {
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-shadow: none;
+    }
+  }
+
   .section-title {
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 300;

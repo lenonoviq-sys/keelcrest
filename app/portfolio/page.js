@@ -16,12 +16,13 @@ export default function PortfolioPage() {
         <div className="absolute inset-0">
           <video
             src="/portfolio-hero.mp4"
-            poster="/portfolio-hero.png"
+            poster="/portfolio-hero.jpg"
             autoPlay
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
+            disablePictureInPicture
             aria-hidden="true"
             className="h-full w-full object-cover object-center"
           />

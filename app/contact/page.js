@@ -17,12 +17,27 @@ export default function ContactPage() {
             <div className="mb-4 sm:mb-8">
               <span className="eyebrow">Get in touch</span>
             </div>
-            <h1 className="section-title text-parchment text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              Begin a{" "}
-              <span className="italic text-gold-gradient">
-                private conversation
-              </span>
-            </h1>
+
+            {/* Heading row — small brand mark sits on the right on mobile */}
+            <div className="flex items-center gap-4 lg:block">
+              <h1 className="flex-1 section-title text-parchment text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                Begin a{" "}
+                <span className="italic text-gold-gradient">
+                  private conversation
+                </span>
+              </h1>
+              <div className="lg:hidden flex-shrink-0">
+                <Image
+                  src="/keelcrest-logo.png"
+                  alt="Keelcrest Holding LTD"
+                  width={600}
+                  height={400}
+                  quality={95}
+                  className="w-32 sm:w-40 h-auto opacity-90"
+                />
+              </div>
+            </div>
+
             <p className="mt-5 sm:mt-8 max-w-xl text-sm sm:text-base lg:text-lg font-light leading-relaxed text-parchment/65">
               <span className="block font-display italic tracking-wide text-gold-gradient">
                 Keelcrest Holding LTD
@@ -50,7 +65,7 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              <div className="relative w-full aspect-[3/2] -ml-2 sm:-ml-6 lg:-ml-32">
+              <div className="hidden lg:block relative w-full aspect-[3/2] lg:-ml-32">
                 <Image
                   src="/keelcrest-logo.png"
                   alt="Keelcrest Holding LTD, brand mark"

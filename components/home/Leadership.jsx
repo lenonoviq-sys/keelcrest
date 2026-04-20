@@ -93,7 +93,7 @@ export default function Leadership() {
                 <h3 className="font-display text-base sm:text-2xl font-light text-parchment leading-tight">
                   {leader.name}
                 </h3>
-                <p className="mt-1 text-[10px] sm:text-sm tracking-[0.15em] uppercase text-gold/80">
+                <p className="mt-1 text-[9px] tracking-[0.08em] sm:text-sm sm:tracking-[0.15em] uppercase text-gold/80 whitespace-nowrap">
                   {leader.role}
                 </p>
                 <div className="mt-3 sm:mt-5 h-px w-8 sm:w-10 bg-gold/40" />
