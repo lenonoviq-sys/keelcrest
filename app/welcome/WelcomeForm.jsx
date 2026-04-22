@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function WelcomeForm() {
   const [submitting, setSubmitting] = useState(false);
+  const { t } = useI18n();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -16,14 +18,14 @@ export default function WelcomeForm() {
     <form onSubmit={onSubmit} className="space-y-8">
       <div>
         <label className="label-luxury" htmlFor="account">
-          Account
+          {t("welcome.account")}
         </label>
         <input
           id="account"
           name="account"
           required
           autoComplete="username"
-          placeholder="Client reference or email"
+          placeholder={t("welcome.account_placeholder")}
           className="input-luxury mt-3"
         />
       </div>
@@ -31,13 +33,13 @@ export default function WelcomeForm() {
       <div>
         <div className="flex items-center justify-between">
           <label className="label-luxury" htmlFor="passcode">
-            Passcode
+            {t("welcome.passcode")}
           </label>
           <button
             type="button"
             className="text-[10px] uppercase tracking-[0.25em] text-parchment/40 hover:text-gold-light transition-colors"
           >
-            Forgot?
+            {t("welcome.forgot")}
           </button>
         </div>
         <input
@@ -46,7 +48,7 @@ export default function WelcomeForm() {
           type="password"
           required
           autoComplete="current-password"
-          placeholder="Enter your passcode"
+          placeholder={t("welcome.passcode_placeholder")}
           className="input-luxury mt-3"
         />
       </div>
@@ -56,7 +58,7 @@ export default function WelcomeForm() {
         disabled={submitting}
         className="btn-luxury w-full justify-center disabled:opacity-50 disabled:cursor-wait"
       >
-        {submitting ? "Verifying…" : "Sign In"}
+        {submitting ? t("welcome.verifying") : t("welcome.signin")}
       </button>
     </form>
   );

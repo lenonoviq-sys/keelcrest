@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function Hero() {
+  const { t } = useI18n();
   return (
     <section className="relative w-full h-screen min-h-[560px] sm:min-h-[720px] overflow-hidden">
       {/* Full-bleed hero wallpaper with slow cinematic zoom */}
@@ -30,18 +34,18 @@ export default function Hero() {
             {/* Left — headline */}
             <div className="animate-fade-up">
               <div className="mb-3 md:mb-8">
-                <span className="eyebrow whitespace-nowrap tracking-[0.05em] sm:tracking-[0.35em] !text-gold-light">
-                  Welcome to KeelCrest Holding LTD
+                <span className="eyebrow whitespace-nowrap tracking-[0.05em] sm:tracking-[0.35em] text-gold-gradient">
+                  {t("home.hero.eyebrow")}
                 </span>
               </div>
 
               <h1 className="section-title text-parchment text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] leading-[1.08] whitespace-normal">
-                From Vision to{" "}
-                <span className="italic text-gold-gradient">Reality</span>
+                {t("home.hero.title1")}
+                <span className="italic text-gold-gradient">{t("home.hero.title2")}</span>
               </h1>
 
               <p className="mt-3 md:mt-8 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-parchment/70 font-light italic font-display">
-                Turning ideas into market leaders.
+                {t("home.hero.sub")}
               </p>
             </div>
 

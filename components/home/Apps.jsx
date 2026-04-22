@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "@/components/I18nProvider";
 
 function StoreButtons() {
+  const { t } = useI18n();
   return (
     <div className="mt-8 lg:mt-10 grid grid-cols-2 gap-3 sm:gap-4 max-w-md">
       <button
@@ -18,10 +22,10 @@ function StoreButtons() {
         </svg>
         <div className="flex flex-col leading-tight">
           <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-parchment/60">
-            Download on the
+            {t("apps.store.apple_top")}
           </span>
           <span className="font-display text-base sm:text-lg text-parchment group-hover:text-gold-light">
-            App Store
+            {t("apps.store.apple_bottom")}
           </span>
         </div>
       </button>
@@ -51,10 +55,10 @@ function StoreButtons() {
         </svg>
         <div className="flex flex-col leading-tight">
           <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-parchment/60">
-            Get it on
+            {t("apps.store.google_top")}
           </span>
           <span className="font-display text-base sm:text-lg text-parchment group-hover:text-gold-light">
-            Google Play
+            {t("apps.store.google_bottom")}
           </span>
         </div>
       </button>
@@ -76,6 +80,7 @@ function PhoneImage({ src, alt, className = "" }) {
 }
 
 export default function Apps() {
+  const { t } = useI18n();
   return (
     <>
       {/* Findtable */}
@@ -88,9 +93,9 @@ export default function Apps() {
                 <span className="eyebrow eyebrow-app">Findtable</span>
               </span>
               <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
-                Your guide to the best{" "}
-                <span className="italic text-gold-gradient">fine dining</span>{" "}
-                restaurants
+                {t("apps.findtable.title1")}
+                <span className="italic text-gold-gradient">{t("apps.findtable.title2")}</span>
+                {t("apps.findtable.title3")}
               </h2>
 
               {/* Mobile-only phone, sits between heading and body */}
@@ -106,10 +111,9 @@ export default function Apps() {
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 <span className="font-display tracking-wide text-gold-gradient">
-                  Findtable
+                  {t("apps.findtable.brand")}
                 </span>{" "}
-                provides you with a comprehensive guide to the finest
-                restaurants around the world.
+                {t("apps.findtable.body")}
               </p>
 
               <StoreButtons />
@@ -148,8 +152,8 @@ export default function Apps() {
                 <span className="eyebrow eyebrow-app">ADDHOTEL</span>
               </span>
               <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
-                Your gateway to the world&rsquo;s{" "}
-                <span className="italic text-gold-gradient">finest hotels</span>
+                {t("apps.addhotel.title1")}
+                <span className="italic text-gold-gradient">{t("apps.addhotel.title2")}</span>
               </h2>
 
               {/* Mobile-only phone, sits between heading and body */}
@@ -165,11 +169,9 @@ export default function Apps() {
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 <span className="font-display tracking-wide text-gold-gradient">
-                  ADDHOTEL
+                  {t("apps.addhotel.brand")}
                 </span>{" "}
-                connects you with a curated selection of luxury hotels
-                worldwide real time availability, verified amenities, and
-                refined details that elevate every stay.
+                {t("apps.addhotel.body")}
               </p>
 
               <StoreButtons />
@@ -190,10 +192,8 @@ export default function Apps() {
                 <span className="eyebrow eyebrow-app">FindSalad</span>
               </span>
               <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
-                Fresh choices for a{" "}
-                <span className="italic text-gold-gradient">
-                  refined appetite
-                </span>
+                {t("apps.findsalad.title1")}
+                <span className="italic text-gold-gradient">{t("apps.findsalad.title2")}</span>
               </h2>
 
               {/* Mobile-only phone, sits between heading and body */}
@@ -209,11 +209,9 @@ export default function Apps() {
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 <span className="font-display tracking-wide text-gold-gradient">
-                  FindSalad
+                  {t("apps.findsalad.brand")}
                 </span>{" "}
-                guides you to thoughtfully crafted salads and wholesome
-                dishes from the finest kitchens, with detailed ingredients,
-                nutritional insight, and locations tailored to your taste.
+                {t("apps.findsalad.body")}
               </p>
 
               <StoreButtons />
@@ -252,8 +250,8 @@ export default function Apps() {
                 <span className="eyebrow eyebrow-app">FIND&amp;MOVE</span>
               </span>
               <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
-                Discover the world&rsquo;s{" "}
-                <span className="italic text-gold-gradient">finest residences</span>
+                {t("apps.findmove.title1")}
+                <span className="italic text-gold-gradient">{t("apps.findmove.title2")}</span>
               </h2>
 
               {/* Mobile-only phone, sits between heading and body */}
@@ -269,11 +267,9 @@ export default function Apps() {
 
               <p className="mt-4 lg:mt-8 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
                 <span className="font-display tracking-wide text-gold-gradient">
-                  FIND&amp;MOVE
+                  {t("apps.findmove.brand")}
                 </span>{" "}
-                guides you through a curated selection of premier
-                properties and residences worldwide, helping you discover
-                the right home for your next chapter.
+                {t("apps.findmove.body")}
               </p>
 
               <StoreButtons />

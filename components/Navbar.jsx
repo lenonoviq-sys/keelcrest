@@ -4,21 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useI18n } from "./I18nProvider";
 
 // hideOnMobile: shown on desktop only.
 // mobileOrder: CSS flex order on mobile (resets on md+), so the mobile nav reads
 // Home → Portfolio → Leadership while desktop keeps the DOM order.
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About", hideOnMobile: true },
-  { href: "/leadership", label: "Leadership", mobileOrder: "order-3" },
-  { href: "/portfolio", label: "Portfolio", mobileOrder: "order-2" },
-  { href: "/contact", label: "Contact", hideOnMobile: true },
+  { href: "/", tKey: "nav.home" },
+  { href: "/about", tKey: "nav.about", hideOnMobile: true },
+  { href: "/leadership", tKey: "nav.leadership", mobileOrder: "order-3" },
+  { href: "/portfolio", tKey: "nav.portfolio", mobileOrder: "order-2" },
+  { href: "/contact", tKey: "nav.contact", hideOnMobile: true },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const { lang, setLang, t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -26,6 +28,11 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const selectLang = (next) => {
+    if (next === lang) return;
+    setLang(next);
+  };
 
   return (
     <header
@@ -61,15 +68,38 @@ export default function Navbar() {
             >
               <Link
                 href={l.href}
-                className={`nav-link text-[14px] sm:text-[15px] md:text-[0.95rem] tracking-[0.04em] md:tracking-normal ${
-                  pathname === l.href ? "active" : ""
-                }`}
+                className={`nav-link ${pathname === l.href ? "active" : ""}`}
               >
-                {l.label}
+                {t(l.tKey)}
               </Link>
             </li>
           ))}
         </ul>
+
+        {/* Language toggle — right side, desktop + mobile */}
+        <div
+          className="ml-auto md:ml-0 flex items-center gap-1.5 md:gap-2 shrink-0"
+          role="group"
+          aria-label="Language"
+        >
+          <button
+            type="button"
+            onClick={() => selectLang("en")}
+            aria-pressed={lang === "en"}
+            className={`lang-btn ${lang === "en" ? "active" : ""}`}
+          >
+            EN
+          </button>
+          <span className="lang-sep" aria-hidden="true">|</span>
+          <button
+            type="button"
+            onClick={() => selectLang("ar")}
+            aria-pressed={lang === "ar"}
+            className={`lang-btn ${lang === "ar" ? "active" : ""}`}
+          >
+            AR
+          </button>
+        </div>
       </nav>
     </header>
   );

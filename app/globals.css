@@ -106,19 +106,40 @@ body {
     line-height: 1.1;
   }
 
-  /* Nav link — minimal underline on hover */
+  /* Nav link — luxury uppercase serif with gold on hover/active */
   .nav-link {
     position: relative;
-    color: rgba(232, 220, 196, 0.82);
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
+    display: inline-block;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(232, 220, 196, 0.78);
     padding: 0.5rem 0;
-    transition: color 0.4s ease;
+    transition: color 0.5s ease, letter-spacing 0.5s ease;
+  }
+
+  @media (min-width: 640px) {
+    .nav-link {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .nav-link {
+      font-size: 0.95rem;
+      letter-spacing: 0.32em;
+    }
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: #e0c88a;
+    background: linear-gradient(135deg, #e0c88a 0%, #c9a961 45%, #a68b47 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .nav-link::after {
@@ -141,6 +162,45 @@ body {
   .nav-link:hover::after,
   .nav-link.active::after {
     transform: scaleX(1);
+  }
+
+  /* Language toggle — minimal EN | AR switch */
+  .lang-btn {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(232, 220, 196, 0.55);
+    padding: 0.35rem 0.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.4s ease, opacity 0.4s ease;
+  }
+
+  @media (min-width: 768px) {
+    .lang-btn {
+      font-size: 0.9rem;
+      letter-spacing: 0.28em;
+    }
+  }
+
+  .lang-btn:hover {
+    color: #e0c88a;
+  }
+
+  .lang-btn.active {
+    background: linear-gradient(135deg, #e0c88a 0%, #c9a961 45%, #a68b47 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .lang-sep {
+    color: rgba(201, 169, 97, 0.35);
+    font-size: 0.8rem;
+    user-select: none;
   }
 
   /* Soft gold divider */

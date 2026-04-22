@@ -1,17 +1,21 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function Approach() {
+  const { t } = useI18n();
   return (
     <section className="relative pt-16 pb-6 sm:py-20 lg:py-40 bg-night">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
         <div className="grid gap-10 sm:gap-16 lg:grid-cols-12 lg:gap-20 items-center">
           {/* Left — text block (mobile order: heading → image → divider → body) */}
           <div className="lg:col-span-6 lg:order-1">
-            <span className="eyebrow">Our Approach</span>
+            <span className="eyebrow">{t("home.approach.eyebrow")}</span>
             <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
-              Building brands{" "}
+              {t("home.approach.title1")}
               <span className="italic text-gold-gradient">
-                from the ground up
+                {t("home.approach.title2")}
               </span>
             </h2>
 
@@ -39,31 +43,12 @@ export default function Approach() {
             <div className="mt-6 sm:mt-8 space-y-5 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
               <p>
                 <span className="font-display tracking-wide text-gold-gradient">
-                  KEELCREST HOLDING LTD
+                  {t("home.approach.brand")}
                 </span>{" "}
-                is focused on building brands and developing projects from
-                the ground up. Our work is defined by a direct, hands-on
-                approach. We create, operate, and grow our own ventures
-                with a clear long-term perspective.
+                {t("home.approach.p1")}
               </p>
-              <p>
-                Rather than relying on external opportunities, we focus on
-                developing ideas internally and shaping them through
-                disciplined execution. Every project begins with a strong
-                foundation, then evolves through careful refinement, allowing
-                it to grow naturally over time. This approach enables us to
-                maintain consistency, protect quality, and ensure that each
-                venture reflects our standards.
-              </p>
-              <p>
-                We believe that true value is built gradually. Growth is not
-                forced or rushed, but guided by clear decisions and sustained
-                effort. By remaining closely involved in every stage, from
-                concept to operation, we retain full control over direction,
-                structure, and development. This level of involvement allows
-                us to adapt when necessary while maintaining a stable
-                long-term path.
-              </p>
+              <p>{t("home.approach.p2")}</p>
+              <p>{t("home.approach.p3")}</p>
             </div>
           </div>
 

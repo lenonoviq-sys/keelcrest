@@ -1,17 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import ImageSlot from "@/components/ImageSlot";
+import { useI18n } from "@/components/I18nProvider";
 
 const leaders = [
   {
-    name: "Ahmad Haydar",
-    role: "Founder & CEO",
-    bio: "Strategic leadership with a forward-thinking approach.",
+    nameKey: "leaders.01.name",
+    roleKey: "leaders.01.role",
+    bioKey: "leaders.01.bio",
     image: "/leader-01.png",
   },
   {
-    name: "Hesham Al Emadi",
-    role: "Co-Founder & Director",
-    bio: "Building long-term client relationships with disciplined stewardship.",
+    nameKey: "leaders.02.name",
+    roleKey: "leaders.02.role",
+    bioKey: "leaders.02.bio",
     image: "/leader-04.png",
     scale: 1.12,
     origin: "center 30%",
@@ -19,6 +22,7 @@ const leaders = [
 ];
 
 export default function Leadership() {
+  const { t } = useI18n();
   return (
     <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gold-sheen opacity-30" />
@@ -37,18 +41,20 @@ export default function Leadership() {
 
           <div className="flex items-center gap-4 mb-4 sm:mb-6">
             <span className="h-px w-10 bg-gold/60" />
-            <span className="eyebrow">Leadership</span>
+            <span className="eyebrow">{t("leadership.eyebrow")}</span>
             <span className="h-px w-10 bg-gold/60" />
           </div>
 
           <h2 className="section-title text-parchment text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-            The{" "}
-            <span className="italic text-gold-gradient">Visionaries</span>{" "}
-            of Keelcrest Holding LTD
+            {t("leadership.title1")}
+            <span className="italic text-gold-gradient">
+              {t("leadership.title_visionaries")}
+            </span>
+            {t("leadership.title2")}
           </h2>
 
           <p className="mt-4 sm:mt-6 font-display italic text-base sm:text-xl md:text-2xl text-parchment/65">
-            Defined by vision · Driven by excellence
+            {t("leadership.motto")}
           </p>
         </div>
 
@@ -61,7 +67,7 @@ export default function Leadership() {
                 {leader.image ? (
                   <Image
                     src={leader.image}
-                    alt={`${leader.name}, ${leader.role}`}
+                    alt={`${t(leader.nameKey)}, ${t(leader.roleKey)}`}
                     fill
                     quality={95}
                     sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -79,7 +85,7 @@ export default function Leadership() {
                 ) : (
                   <ImageSlot
                     label={`PORTRAIT ${String(i + 1).padStart(2, "0")}`}
-                    description={`${leader.role}, formal corporate portrait, matched lighting and background across all five leaders.`}
+                    description={`${t(leader.roleKey)}, formal corporate portrait, matched lighting and background across all five leaders.`}
                     filename={leader.filename}
                     aspect="aspect-auto h-full"
                     className="h-full transition-transform duration-[1500ms] group-hover:scale-105"
@@ -91,14 +97,14 @@ export default function Leadership() {
               {/* Text block */}
               <div className="p-3 sm:p-7">
                 <h3 className="font-display text-base sm:text-2xl font-light text-parchment leading-tight">
-                  {leader.name}
+                  {t(leader.nameKey)}
                 </h3>
                 <p className="mt-1 text-[9px] tracking-[0.08em] sm:text-sm sm:tracking-[0.15em] uppercase text-gold/80 whitespace-nowrap">
-                  {leader.role}
+                  {t(leader.roleKey)}
                 </p>
                 <div className="mt-3 sm:mt-5 h-px w-8 sm:w-10 bg-gold/40" />
                 <p className="mt-3 sm:mt-5 text-xs sm:text-sm leading-relaxed text-parchment/55">
-                  {leader.bio}
+                  {t(leader.bioKey)}
                 </p>
               </div>
             </article>

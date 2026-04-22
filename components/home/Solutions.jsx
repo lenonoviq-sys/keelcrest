@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function Solutions() {
+  const { t } = useI18n();
   return (
     <section className="relative py-16 sm:py-20 lg:py-40 bg-night">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
@@ -8,13 +12,13 @@ export default function Solutions() {
           {/* Left — text block */}
           <div className="lg:col-span-6">
             <div className="mb-8">
-              <span className="eyebrow">Portfolio</span>
+              <span className="eyebrow">{t("solutions.eyebrow")}</span>
             </div>
 
             <h2 className="section-title text-parchment text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              A Private Group Focused On{" "}
+              {t("solutions.title1")}
               <span className="italic text-gold-gradient">
-                Long-Term Value
+                {t("solutions.title2")}
               </span>
             </h2>
 
@@ -22,9 +26,7 @@ export default function Solutions() {
 
             <div className="max-w-lg">
               <p className="font-display text-lg sm:text-xl md:text-2xl italic text-parchment/55 leading-relaxed">
-                We are a privately held group focused on strategic investments
-                and long-term value creation. Our portfolio reflects a
-                commitment to quality, discipline, and sustainable growth.
+                {t("solutions.body")}
               </p>
             </div>
           </div>

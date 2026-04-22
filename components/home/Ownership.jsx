@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function Ownership() {
+  const { t } = useI18n();
   return (
     <section className="relative pt-6 pb-16 sm:py-20 lg:py-40 bg-night">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14">
@@ -26,11 +30,11 @@ export default function Ownership() {
 
           {/* Right — text (mobile shows: heading → image → divider → body) */}
           <div className="lg:col-span-7">
-            <span className="eyebrow">Ownership &amp; Responsibility</span>
+            <span className="eyebrow">{t("ownership.eyebrow")}</span>
             <h2 className="section-title mt-4 sm:mt-6 text-parchment text-3xl sm:text-4xl md:text-5xl">
-              Built with intention,{" "}
+              {t("ownership.title1")}
               <span className="italic text-gold-gradient">
-                structured to last
+                {t("ownership.title2")}
               </span>
             </h2>
 
@@ -56,30 +60,14 @@ export default function Ownership() {
             <div className="divider-gold mt-6 sm:mt-8 mx-auto lg:mx-0" />
 
             <div className="mt-6 sm:mt-8 space-y-5 text-base lg:text-lg font-light leading-relaxed text-parchment/70">
-              <p>
-                Our portfolio continues to expand through the creation of new
-                brands and projects, each developed with intention and
-                purpose. Some ventures are built to solve specific problems,
-                while others are designed to explore new opportunities.
-                Regardless of scale or sector, every project is approached
-                with the same level of discipline, focus, and commitment.
-              </p>
+              <p>{t("ownership.p1")}</p>
               <p>
                 <span className="font-display tracking-wide text-gold-gradient">
-                  At KEELCREST
+                  {t("ownership.p2.brand")}
                 </span>
-                , ownership is not only about holding assets. It is about
-                responsibility. We take full responsibility for what we build,
-                how it operates, and how it grows over time. This mindset
-                allows us to move with clarity, make confident decisions, and
-                build ventures that are structured to last.
+                {t("ownership.p2")}
               </p>
-              <p>
-                We are continuously building, refining, and expanding. Our
-                work is ongoing, shaped by experience and guided by a
-                long-term vision that prioritizes stability, quality, and
-                sustainable growth.
-              </p>
+              <p>{t("ownership.p3")}</p>
             </div>
           </div>
         </div>

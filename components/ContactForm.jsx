@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useI18n } from "./I18nProvider";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useI18n();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -15,51 +17,51 @@ export default function ContactForm() {
       <div className="grid gap-6 sm:gap-10 md:grid-cols-2">
         <div>
           <label className="label-luxury" htmlFor="name">
-            Full Name
+            {t("form.fullname")}
           </label>
           <input
             id="name"
             name="name"
             required
-            placeholder="Your name"
+            placeholder={t("form.fullname_placeholder")}
             className="input-luxury mt-3"
           />
         </div>
 
         <div>
           <label className="label-luxury" htmlFor="email">
-            Email
+            {t("form.email")}
           </label>
           <input
             id="email"
             name="email"
             type="email"
             required
-            placeholder="you@domain.com"
+            placeholder={t("form.email_placeholder")}
             className="input-luxury mt-3"
           />
         </div>
 
         <div>
           <label className="label-luxury" htmlFor="company">
-            Company / Office
+            {t("form.company")}
           </label>
           <input
             id="company"
             name="company"
-            placeholder="Your organization"
+            placeholder={t("form.company_placeholder")}
             className="input-luxury mt-3"
           />
         </div>
 
         <div>
           <label className="label-luxury" htmlFor="subject">
-            Subject
+            {t("form.subject")}
           </label>
           <input
             id="subject"
             name="subject"
-            placeholder="Private inquiry"
+            placeholder={t("form.subject_placeholder")}
             className="input-luxury mt-3"
           />
         </div>
@@ -67,25 +69,24 @@ export default function ContactForm() {
 
       <div className="mt-6 sm:mt-10">
         <label className="label-luxury" htmlFor="message">
-          Message
+          {t("form.message")}
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
           required
-          placeholder="A few lines about your enquiry..."
+          placeholder={t("form.message_placeholder")}
           className="input-luxury mt-3 resize-none"
         />
       </div>
 
       <div className="mt-8 sm:mt-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-parchment/40 tracking-wide max-w-md">
-          Correspondence is received in confidence. A member of our team will
-          be in touch within two business days.
+          {t("form.disclosure")}
         </p>
         <button type="submit" className="btn-luxury">
-          {submitted ? "Message received" : "Send Enquiry"}
+          {submitted ? t("form.sent") : t("form.send")}
           <svg
             width="14"
             height="14"
