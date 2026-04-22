@@ -76,9 +76,19 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Language toggle — right side, desktop + mobile */}
+        {/* Language toggle — mobile: single button that toggles */}
+        <button
+          type="button"
+          onClick={() => selectLang(lang === "en" ? "ar" : "en")}
+          aria-label={lang === "en" ? "Switch to Arabic" : "Switch to English"}
+          className="lang-btn active ms-auto shrink-0 md:hidden"
+        >
+          {lang === "en" ? "EN" : "AR"}
+        </button>
+
+        {/* Language toggle — desktop: EN | AR split (mirrors in RTL) */}
         <div
-          className="ml-auto md:ml-0 flex items-center gap-1.5 md:gap-2 shrink-0"
+          className="hidden md:flex items-center gap-2 shrink-0"
           role="group"
           aria-label="Language"
         >

@@ -9,9 +9,9 @@ export default function Footer() {
   return (
     <footer className="relative bg-night border-t border-gold/10">
       <div className="mx-auto max-w-[1400px] px-8 lg:px-14 py-12 sm:py-16 lg:py-20">
-        <div className="grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-12">
+        <div className="grid gap-8 sm:gap-12 md:grid-cols-12">
           {/* Brand + tagline */}
-          <div className="col-span-2 md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
             <Link href="/" className="inline-flex items-center">
               <Image
                 src="/logo.png"
@@ -59,7 +59,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact us — right of Navigation */}
+          {/* Contact */}
           <div className="md:col-span-4">
             <p className="label-luxury mb-4 sm:mb-6">{t("footer.contact_us")}</p>
             <ul className="space-y-3 text-sm text-parchment/70">
@@ -81,38 +81,38 @@ export default function Footer() {
               </li>
               <li className="text-parchment/50">{t("footer.appointment")}</li>
             </ul>
+
+            {/* Social icons — placeholder hrefs, swap when accounts are live */}
+            <ul className="mt-5 flex items-center gap-4">
+              {[
+                { name: "Facebook", src: "/social-facebook.png", size: "h-5 w-5", href: "#" },
+                { name: "X", src: "/social-twitter.png", size: "h-5 w-5", href: "#" },
+                { name: "LinkedIn", src: "/social-linkedin.png", size: "h-5 w-5", href: "#" },
+                { name: "Instagram", src: "/social-instagram.png", size: "h-6 w-6", href: "#" },
+              ].map((s) => (
+                <li key={s.name}>
+                  <a
+                    href={s.href}
+                    aria-label={s.name}
+                    className="block opacity-70 transition-opacity duration-300 hover:opacity-100"
+                  >
+                    <Image
+                      src={s.src}
+                      alt=""
+                      width={512}
+                      height={512}
+                      quality={95}
+                      className={`${s.size} object-contain`}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* Soft gold divider */}
         <div className="mt-10 sm:mt-16 h-px w-full bg-gold-sheen opacity-40" />
-
-        {/* Social icons — centered on the divider line (mobile + desktop) */}
-        <ul className="mt-6 flex items-center justify-center gap-5 sm:gap-6">
-          {[
-            { name: "Facebook", src: "/social-facebook.png", size: "h-5 w-5", href: "#" },
-            { name: "X", src: "/social-twitter.png", size: "h-5 w-5", href: "#" },
-            { name: "LinkedIn", src: "/social-linkedin.png", size: "h-5 w-5", href: "#" },
-            { name: "Instagram", src: "/social-instagram.png", size: "h-6 w-6", href: "#" },
-          ].map((s) => (
-            <li key={s.name}>
-              <a
-                href={s.href}
-                aria-label={s.name}
-                className="block opacity-70 transition-opacity duration-300 hover:opacity-100"
-              >
-                <Image
-                  src={s.src}
-                  alt=""
-                  width={512}
-                  height={512}
-                  quality={95}
-                  className={`${s.size} object-contain`}
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
 
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center text-[10px] leading-relaxed text-parchment/35 md:flex-row md:items-center md:gap-2 md:text-left md:text-xs">
           <p className="tracking-[0.12em] uppercase md:tracking-[0.15em]">

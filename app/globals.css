@@ -111,11 +111,11 @@ body {
     position: relative;
     display: inline-block;
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.7rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(232, 220, 196, 0.78);
+    color: rgba(232, 220, 196, 0.85);
     padding: 0.5rem 0;
     transition: color 0.5s ease, letter-spacing 0.5s ease;
   }
@@ -131,6 +131,8 @@ body {
     .nav-link {
       font-size: 0.95rem;
       letter-spacing: 0.32em;
+      font-weight: 500;
+      color: rgba(232, 220, 196, 0.78);
     }
   }
 

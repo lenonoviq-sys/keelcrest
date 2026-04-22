@@ -14,6 +14,7 @@ export function I18nProvider({ children }) {
       if (stored === "ar" || stored === "en") {
         setLangState(stored);
         document.documentElement.lang = stored;
+        document.documentElement.dir = stored === "ar" ? "rtl" : "ltr";
       }
     } catch {}
   }, []);
@@ -23,6 +24,7 @@ export function I18nProvider({ children }) {
     try {
       localStorage.setItem("kc-lang", next);
       document.documentElement.lang = next;
+      document.documentElement.dir = next === "ar" ? "rtl" : "ltr";
     } catch {}
   }, []);
 

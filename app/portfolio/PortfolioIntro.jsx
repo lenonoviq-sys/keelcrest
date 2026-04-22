@@ -27,7 +27,7 @@ export default function PortfolioIntro() {
 
         <div className="relative z-10 h-full flex items-center sm:items-end">
           <div className="mx-auto w-full max-w-[1400px] px-6 sm:px-8 lg:px-14 sm:pb-20 lg:pb-28">
-            <div className="max-w-[24rem] sm:max-w-3xl text-left animate-fade-up">
+            <div className="max-w-[24rem] sm:max-w-3xl text-start animate-fade-up">
               <div className="mb-4 sm:mb-8">
                 <span className="eyebrow text-[0.7rem] tracking-[0.3em]">
                   {t("portfolio.hero.eyebrow")}
